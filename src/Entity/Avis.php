@@ -34,13 +34,8 @@ class Avis
     #[ORM\Column]
     private ?bool $valide = null;
 
-    #[ORM\ManyToMany(targetEntity: Utilisateurs::class)]
-    private Collection $avisUtilisateurs;
-
-    public function __construct()
-    {
-        $this->avisUtilisateurs = new ArrayCollection();
-    }
+    #[ORM\ManyToOne(inversedBy: 'utilisateursAvis')]
+    private ?Utilisateurs $utilisateurs = null;
 
     public function getId(): ?int
     {
@@ -119,26 +114,14 @@ class Avis
         return $this;
     }
 
-    /**
-     * @return Collection<int, Utilisateurs>
-     */
-    public function getAvisUtilisateurs(): Collection
+    public function getUtilisateurs(): ?Utilisateurs
     {
-        return $this->avisUtilisateurs;
+        return $this->utilisateurs;
     }
 
-    public function addAvisUtilisateur(Utilisateurs $avisUtilisateur): static
+    public function setUtilisateurs(?Utilisateurs $utilisateurs): static
     {
-        if (!$this->avisUtilisateurs->contains($avisUtilisateur)) {
-            $this->avisUtilisateurs->add($avisUtilisateur);
-        }
-
-        return $this;
-    }
-
-    public function removeAvisUtilisateur(Utilisateurs $avisUtilisateur): static
-    {
-        $this->avisUtilisateurs->removeElement($avisUtilisateur);
+        $this->utilisateurs = $utilisateurs;
 
         return $this;
     }

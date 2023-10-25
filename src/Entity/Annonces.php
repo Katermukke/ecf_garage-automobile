@@ -21,17 +21,13 @@ class Annonces
     #[ORM\Column(length: 255)]
     private ?string $dateDePublication = null;
 
-    #[ORM\ManyToMany(targetEntity: Utilisateurs::class, inversedBy: 'annonces')]
-    private Collection $annoncesUtilisateurs;
-
     #[ORM\OneToOne(inversedBy: 'annonces', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?VoituresOccasions $annoncesVoituresOccasions = null;
 
-    public function __construct()
-    {
-        $this->annoncesUtilisateurs = new ArrayCollection();
-    }
+    #[ORM\ManyToOne(inversedBy: 'utilisateursAnnonces')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Utilisateurs $utilisateurs = null;
 
     public function getId(): ?int
     {
@@ -62,30 +58,6 @@ class Annonces
         return $this;
     }
 
-    /**
-     * @return Collection<int, Utilisateurs>
-     */
-    public function getAnnoncesUtilisateurs(): Collection
-    {
-        return $this->annoncesUtilisateurs;
-    }
-
-    public function addAnnoncesUtilisateur(Utilisateurs $annoncesUtilisateur): static
-    {
-        if (!$this->annoncesUtilisateurs->contains($annoncesUtilisateur)) {
-            $this->annoncesUtilisateurs->add($annoncesUtilisateur);
-        }
-
-        return $this;
-    }
-
-    public function removeAnnoncesUtilisateur(Utilisateurs $annoncesUtilisateur): static
-    {
-        $this->annoncesUtilisateurs->removeElement($annoncesUtilisateur);
-
-        return $this;
-    }
-
     public function getAnnoncesVoituresOccasions(): ?VoituresOccasions
     {
         return $this->annoncesVoituresOccasions;
@@ -94,6 +66,18 @@ class Annonces
     public function setAnnoncesVoituresOccasions(VoituresOccasions $annoncesVoituresOccasions): static
     {
         $this->annoncesVoituresOccasions = $annoncesVoituresOccasions;
+
+        return $this;
+    }
+
+    public function getUtilisateurs(): ?Utilisateurs
+    {
+        return $this->utilisateurs;
+    }
+
+    public function setUtilisateurs(?Utilisateurs $utilisateurs): static
+    {
+        $this->utilisateurs = $utilisateurs;
 
         return $this;
     }

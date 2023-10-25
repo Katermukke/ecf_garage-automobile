@@ -40,14 +40,18 @@ class Utilisateurs
     #[ORM\OneToMany(mappedBy: 'servicesUtilisateurs', targetEntity: Services::class)]
     private Collection $services;
 
-    #[ORM\ManyToMany(targetEntity: Annonces::class, mappedBy: 'annoncesUtilisateurs')]
-    private Collection $annonces;
+    #[ORM\OneToMany(mappedBy: 'utilisateurs', targetEntity: Avis::class)]
+    private Collection $utilisateursAvis;
+
+    #[ORM\OneToMany(mappedBy: 'utilisateurs', targetEntity: Annonces::class)]
+    private Collection $utilisateursAnnonces;
 
     public function __construct()
     {
         $this->utilisateursJours = new ArrayCollection();
         $this->services = new ArrayCollection();
-        $this->annonces = new ArrayCollection();
+        $this->utilisateursAvis = new ArrayCollection();
+        $this->utilisateursAnnonces = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -188,27 +192,60 @@ class Utilisateurs
     }
 
     /**
-     * @return Collection<int, Annonces>
+     * @return Collection<int, Avis>
      */
-    public function getAnnonces(): Collection
+    public function getUtilisateursAvis(): Collection
     {
-        return $this->annonces;
+        return $this->utilisateursAvis;
     }
 
-    public function addAnnonce(Annonces $annonce): static
+    public function addUtilisateursAvi(Avis $utilisateursAvi): static
     {
-        if (!$this->annonces->contains($annonce)) {
-            $this->annonces->add($annonce);
-            $annonce->addAnnoncesUtilisateur($this);
+        if (!$this->utilisateursAvis->contains($utilisateursAvi)) {
+            $this->utilisateursAvis->add($utilisateursAvi);
+            $utilisateursAvi->setUtilisateurs($this);
         }
 
         return $this;
     }
 
-    public function removeAnnonce(Annonces $annonce): static
+    public function removeUtilisateursAvi(Avis $utilisateursAvi): static
     {
-        if ($this->annonces->removeElement($annonce)) {
-            $annonce->removeAnnoncesUtilisateur($this);
+        if ($this->utilisateursAvis->removeElement($utilisateursAvi)) {
+            // set the owning side to null (unless already changed)
+            if ($utilisateursAvi->getUtilisateurs() === $this) {
+                $utilisateursAvi->setUtilisateurs(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Annonces>
+     */
+    public function getUtilisateursAnnonces(): Collection
+    {
+        return $this->utilisateursAnnonces;
+    }
+
+    public function addUtilisateursAnnonce(Annonces $utilisateursAnnonce): static
+    {
+        if (!$this->utilisateursAnnonces->contains($utilisateursAnnonce)) {
+            $this->utilisateursAnnonces->add($utilisateursAnnonce);
+            $utilisateursAnnonce->setUtilisateurs($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUtilisateursAnnonce(Annonces $utilisateursAnnonce): static
+    {
+        if ($this->utilisateursAnnonces->removeElement($utilisateursAnnonce)) {
+            // set the owning side to null (unless already changed)
+            if ($utilisateursAnnonce->getUtilisateurs() === $this) {
+                $utilisateursAnnonce->setUtilisateurs(null);
+            }
         }
 
         return $this;
