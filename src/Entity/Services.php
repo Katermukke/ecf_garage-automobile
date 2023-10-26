@@ -20,7 +20,7 @@ class Services
     private ?string $description = null;
 
     #[ORM\ManyToOne(inversedBy: 'services')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Utilisateurs $servicesUtilisateurs = null;
 
     public function getId(): ?int

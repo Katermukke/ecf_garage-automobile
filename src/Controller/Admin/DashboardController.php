@@ -2,6 +2,9 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Avis;
+use App\Entity\Jours;
+use App\Entity\Horaires;
 use App\Entity\Services;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -43,6 +46,8 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Services', 'fas fa-list', Services::class);
+        yield MenuItem::linkToCrud('Services', 'fa-solid fa-screwdriver-wrench', Services::class);
+        yield MenuItem::linkToCrud('Horaires', 'fa-solid fa-calendar-days', Horaires::class);
+        yield MenuItem::linkToCrud('Avis', 'fa-solid fa-calendar-days', Avis::class);
     }
 }
