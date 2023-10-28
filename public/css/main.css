@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "audiowide";
+  src: url("./font/audiowide.woff2") format("woff2"), url("./font/fontaudiowide.woff2") format("woff");
+}
+@font-face {
+  font-family: "bethellen";
+  src: url("../font/bethellen.woff2") format("woff2"), url("../font/bethellen.woff") format("woff");
+}
+:root {
+  --font-size-nav: ;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-sand: #e4bf94;
+  --color-orange: #e47610;
+  --color-brown: #421e0a;
+  --color-beige: #ffe0bc;
+  --background-color-white: #ffffff;
+  --background-color-black: #000000;
+  --background-color-sand: #e4bf94;
+  --background-color-orange: #e47610;
+  --background-color-brown: #421e0a;
+  --background-color-beige: #ffe0bc;
+  --font-audiowide: "audiowide";
+  --font-bethellen: "bethellen";
+}
+
+body {
+  font-family: var(--font-audiowide);
+  overflow-x: hidden;
+}
+body .navbar {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-sand);
+  font-family: var(--font-audiowide);
+}
+body .navbar a {
+  font-family: var(--font-audiowide);
+  color: var(--color-white);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+@media (max-width: 992px) {
+  body .navbar a {
+    text-align: center;
+  }
+}
+body .navbar .contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 0.3rem);
+  margin: 0 2.5rem 0 3rem;
+}
+@media (max-width: 992px) {
+  body .navbar .contain {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 1.5rem 0 1.5rem;
+  }
+}
+body .navbar .contain .navbar-brand {
+  display: block;
+  height: 100%;
+  width: 12rem;
+}
+@media (max-width: 992px) {
+  body .navbar .contain .navbar-brand {
+    display: flex;
+    justify-content: start;
+    flex-wrap: nowrap;
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  body .navbar .contain .navbar-brand {
+    width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  body .navbar .contain .navbar-brand {
+    width: 70%;
+  }
+}
+body .navbar .contain .navbar-brand img {
+  height: 2.2rem;
+  width: 12rem;
+}
+body .navbar .contain .navbar-collapse {
+  flex-grow: 0;
+  width: 100%;
+}
+body .navbar .contain .navbar-collapse .excvtend {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+body .navbar .contain .navbar-collapse .excvtend .navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 78%;
+}
+body .navbar .contain .navbar-collapse .seConnecter {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 27.027027027%;
+}
+@media (max-width: 992px) {
+  body .navbar .contain .navbar-collapse .seConnecter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+body .navbar .contain .navbar-collapse .seConnecter svg {
+  height: 1rem;
+  width: 1rem;
+}
+body .navbar .contain .navbar-collapse .seConnecter .btn {
+  width: auto;
+}/*# sourceMappingURL=main.css.map */

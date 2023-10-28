@@ -1,0 +1,98 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-sand);
+  font-family: var(--font-audiowide);
+  a {
+    font-family: var(--font-audiowide);
+    color: var(--color-white);
+    font-size: 0.9rem;
+    text-decoration: none;
+
+    @include navbar {
+      text-align: center;
+    }
+  }
+
+  .contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 0.3rem);
+    margin: 0 2.5rem 0 3rem;
+
+    @include navbar {
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 0 1.5rem 0 1.5rem;
+    }
+
+    .navbar-brand {
+      display: block;
+      height: 100%;
+      width: 12rem;
+
+      @include navbar {
+        display: flex;
+        justify-content: start;
+        flex-wrap: nowrap;
+        width: 90%;
+      }
+
+      @include md-max {
+        width: 80%;
+      }
+
+      @include sm-max {
+        width: 70%;
+      }
+
+      img {
+        height: 2.2rem;
+        width: 12rem;
+      }
+    }
+
+    .navbar-collapse {
+      flex-grow: 0;
+      width: calc(100%);
+
+      @include navbar {
+      }
+
+      .excvtend {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        .navbar-nav {
+          display: flex;
+          justify-content: space-between;
+          width: 78%;
+        }
+      }
+
+      .seConnecter {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: calc(100% / 3.7);
+
+        @include navbar {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        svg {
+          height: 1rem;
+          width: 1rem;
+        }
+
+        .btn {
+          width: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,11 @@
 @font-face {
-  font-family: "Jockey One";
-  src: url("./font/") format("woff2"), url("./font/") format("woff");
+  font-family: "audiowide";
+  src: url("./font/audiowide.woff2") format("woff2"),
+    url("./font/fontaudiowide.woff2") format("woff");
 }
 
 @font-face {
-  font-family: "Just Another Hand";
-  src: url("./font/") format("woff2"), url("./font/") format("woff");
+  font-family: "bethellen";
+  src: url("../font/bethellen.woff2") format("woff2"),
+    url("../font/bethellen.woff") format("woff");
 }
