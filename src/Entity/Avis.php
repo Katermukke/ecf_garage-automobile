@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\AvisRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -16,10 +14,10 @@ class Avis
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 2000)]
@@ -34,8 +32,8 @@ class Avis
     #[ORM\Column]
     private ?bool $valide = null;
 
-    #[ORM\ManyToOne(inversedBy: 'utilisateursAvis')]
-    private ?Utilisateurs $utilisateurs = null;
+    #[ORM\ManyToOne(inversedBy: 'userAvis')]
+    private ?User $userAvis = null;
 
     public function getId(): ?int
     {
@@ -114,14 +112,14 @@ class Avis
         return $this;
     }
 
-    public function getUtilisateurs(): ?Utilisateurs
+    public function getUserAvis(): ?User
     {
-        return $this->utilisateurs;
+        return $this->userAvis;
     }
 
-    public function setUtilisateurs(?Utilisateurs $utilisateurs): static
+    public function setUserAvis(?User $userAvis): static
     {
-        $this->utilisateurs = $utilisateurs;
+        $this->userAvis = $userAvis;
 
         return $this;
     }

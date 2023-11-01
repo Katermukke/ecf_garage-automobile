@@ -14,16 +14,16 @@ class FormulaireDeRenseignement
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 10)]
     private ?string $telephone = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 180)]
     private ?string $email = null;
 
     #[ORM\Column(length: 255)]
@@ -35,8 +35,8 @@ class FormulaireDeRenseignement
     #[ORM\Column(length: 255)]
     private ?string $valide = null;
 
-    #[ORM\ManyToOne]
-    private ?utilisateurs $formulaireUtilisateurs = null;
+    #[ORM\ManyToOne(inversedBy: 'UserFormulaire')]
+    private ?User $UserFormulaire = null;
 
     public function getId(): ?int
     {
@@ -127,14 +127,14 @@ class FormulaireDeRenseignement
         return $this;
     }
 
-    public function getFormulaireUtilisateurs(): ?utilisateurs
+    public function getUserFormulaire(): ?User
     {
-        return $this->formulaireUtilisateurs;
+        return $this->UserFormulaire;
     }
 
-    public function setFormulaireUtilisateurs(?utilisateurs $formulaireUtilisateurs): static
+    public function setUserFormulaire(?User $UserFormulaire): static
     {
-        $this->formulaireUtilisateurs = $formulaireUtilisateurs;
+        $this->UserFormulaire = $UserFormulaire;
 
         return $this;
     }

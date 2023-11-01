@@ -15,13 +15,13 @@ class Modeles
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $nomModeles = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $cylindree = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 10)]
     private ?string $chevaux = null;
 
     #[ORM\OneToMany(mappedBy: 'marquesModeles', targetEntity: Marques::class)]

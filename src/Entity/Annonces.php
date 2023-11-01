@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\AnnoncesRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AnnoncesRepository::class)]
@@ -15,19 +13,18 @@ class Annonces
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 100)]
     private ?string $titre = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 8)]
     private ?string $dateDePublication = null;
 
     #[ORM\OneToOne(inversedBy: 'annonces', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private ?VoituresOccasions $annoncesVoituresOccasions = null;
 
-    #[ORM\ManyToOne(inversedBy: 'utilisateursAnnonces')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Utilisateurs $utilisateurs = null;
+    #[ORM\ManyToOne(inversedBy: 'userAnnonces')]
+    private ?User $userAnnonces = null;
 
     public function getId(): ?int
     {
@@ -70,14 +67,14 @@ class Annonces
         return $this;
     }
 
-    public function getUtilisateurs(): ?Utilisateurs
+    public function getUserAnnonces(): ?User
     {
-        return $this->utilisateurs;
+        return $this->userAnnonces;
     }
 
-    public function setUtilisateurs(?Utilisateurs $utilisateurs): static
+    public function setUserAnnonces(?User $userAnnonces): static
     {
-        $this->utilisateurs = $utilisateurs;
+        $this->userAnnonces = $userAnnonces;
 
         return $this;
     }

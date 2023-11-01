@@ -28,10 +28,10 @@ class VoituresOccasions
     #[ORM\Column]
     private ?int $kilometrage = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $carburant = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $boiteDeVitesse = null;
 
     #[ORM\OneToOne(mappedBy: 'annoncesVoituresOccasions', cascade: ['persist', 'remove'])]

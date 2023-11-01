@@ -179,6 +179,9 @@ body .navbar a {
   font-size: 0.9rem;
   text-decoration: none;
 }
+body .navbar a:hover {
+  color: var(--color-orange);
+}
 @media (max-width: 992px) {
   body .navbar a {
     text-align: center;

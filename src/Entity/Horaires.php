@@ -14,52 +14,97 @@ class Horaires
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $heures_ouvertures = null;
+    #[ORM\Column(length: 10)]
+    private ?string $Jours = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $heures_fermetures = null;
+    private ?\DateTimeInterface $horairesOuverturesMatin = null;
 
-    #[ORM\ManyToOne(inversedBy: 'jours_horaires')]
-    private ?Jours $jour = null;
+    #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $horairesFermeturesMatin = null;
+
+    #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $horairesOuverturesSoir = null;
+
+    #[ORM\Column(type: Types::TIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $horairesFermeturesSoir = null;
+
+    #[ORM\ManyToOne(inversedBy: 'userHoraires')]
+    private ?User $userHoraires = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getHeuresOuvertures(): ?\DateTimeInterface
+    public function getJours(): ?string
     {
-        return $this->heures_ouvertures;
+        return $this->Jours;
     }
 
-    public function setHeuresOuvertures(?\DateTimeInterface $heures_ouvertures): static
+    public function setJours(string $Jours): static
     {
-        $this->heures_ouvertures = $heures_ouvertures;
+        $this->Jours = $Jours;
 
         return $this;
     }
 
-    public function getHeuresFermetures(): ?\DateTimeInterface
+    public function getHorairesOuverturesMatin(): ?\DateTimeInterface
     {
-        return $this->heures_fermetures;
+        return $this->horairesOuverturesMatin;
     }
 
-    public function setHeuresFermetures(?\DateTimeInterface $heures_fermetures): static
+    public function setHorairesOuverturesMatin(?\DateTimeInterface $horairesOuverturesMatin): static
     {
-        $this->heures_fermetures = $heures_fermetures;
+        $this->horairesOuverturesMatin = $horairesOuverturesMatin;
 
         return $this;
     }
 
-    public function getJour(): ?Jours
+    public function getHorairesFermeturesMatin(): ?\DateTimeInterface
     {
-        return $this->jour;
+        return $this->horairesFermeturesMatin;
     }
 
-    public function setJour(?Jours $jour): static
+    public function setHorairesFermeturesMatin(?\DateTimeInterface $horairesFermeturesMatin): static
     {
-        $this->jour = $jour;
+        $this->horairesFermeturesMatin = $horairesFermeturesMatin;
+
+        return $this;
+    }
+
+    public function getHorairesOuverturesSoir(): ?\DateTimeInterface
+    {
+        return $this->horairesOuverturesSoir;
+    }
+
+    public function setHorairesOuverturesSoir(?\DateTimeInterface $horairesOuverturesSoir): static
+    {
+        $this->horairesOuverturesSoir = $horairesOuverturesSoir;
+
+        return $this;
+    }
+
+    public function getHorairesFermeturesSoir(): ?\DateTimeInterface
+    {
+        return $this->horairesFermeturesSoir;
+    }
+
+    public function setHorairesFermeturesSoir(?\DateTimeInterface $horairesFermeturesSoir): static
+    {
+        $this->horairesFermeturesSoir = $horairesFermeturesSoir;
+
+        return $this;
+    }
+
+    public function getUserHoraires(): ?User
+    {
+        return $this->userHoraires;
+    }
+
+    public function setUserHoraires(?User $userHoraires): static
+    {
+        $this->userHoraires = $userHoraires;
 
         return $this;
     }
