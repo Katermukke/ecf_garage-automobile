@@ -139,11 +139,19 @@ table {
 
 @font-face {
   font-family: "audiowide";
-  src: url("./font/audiowide.woff2") format("woff2"), url("./font/fontaudiowide.woff2") format("woff");
+  src: url("../font/audiowide.woff2") format("woff2"), url("../font/fontaudiowide.woff2") format("woff");
 }
 @font-face {
   font-family: "bethellen";
   src: url("../font/bethellen.woff2") format("woff2"), url("../font/bethellen.woff") format("woff");
+}
+@font-face {
+  font-family: "audiowide";
+  src: url("./font/audiowide.woff2") format("woff2"), url("./font/fontaudiowide.woff2") format("woff");
+}
+@font-face {
+  font-family: "bethellen";
+  src: url("./font/bethellen.woff2") format("woff2"), url("./font/bethellen.woff") format("woff");
 }
 :root {
   --font-size-nav: ;
@@ -153,19 +161,20 @@ table {
   --color-orange: #e47610;
   --color-brown: #421e0a;
   --color-beige: #ffe0bc;
+  --color-brown-clear: #bfac9a;
   --background-color-white: #ffffff;
   --background-color-black: #000000;
   --background-color-sand: #e4bf94;
   --background-color-orange: #e47610;
   --background-color-brown: #421e0a;
   --background-color-beige: #ffe0bc;
+  --background-color-brown-clear: #bfac9a;
   --font-audiowide: "audiowide";
   --font-bethellen: "bethellen";
 }
 
 body {
   font-family: var(--font-audiowide);
-  overflow-x: hidden;
 }
 body .navbar {
   display: flex;
@@ -261,4 +270,26 @@ body .navbar .contain .navbar-collapse .seConnecter svg {
 }
 body .navbar .contain .navbar-collapse .seConnecter .btn {
   width: auto;
+}
+body header {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body header .voitureRouiller {
+  width: 100vw;
+  background-size: cover;
+}
+body header .divNewGreatThings {
+  width: 40rem;
+  height: 40rem;
+  position: absolute;
+  top: 15%;
+  left: 27%;
+}
+body header .divNewGreatThings .newGreatThings {
+  width: 50rem;
+  height: 30rem;
 }/*# sourceMappingURL=main.css.map */

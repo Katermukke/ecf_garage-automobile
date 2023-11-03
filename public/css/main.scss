@@ -5,7 +5,7 @@
 @import "utils/variables";
 
 body {
-  @import "layout/navbar";
   font-family: var(--font-audiowide);
-  overflow-x: hidden;
+  @import "layout/navbar";
+  @import "layout/header";
 }
