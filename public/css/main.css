@@ -272,7 +272,7 @@ body .navbar .contain .navbar-collapse .seConnecter .btn {
   width: auto;
 }
 body header {
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -280,7 +280,7 @@ body header {
 }
 body header .voitureRouiller {
   width: 100vw;
-  background-size: cover;
+  height: 100vh;
 }
 body header .divNewGreatThings {
   width: 40rem;
