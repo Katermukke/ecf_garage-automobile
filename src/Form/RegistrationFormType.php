@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -31,12 +32,28 @@ class RegistrationFormType extends AbstractType
                 ],
                 'label' => 'Prénom'
             ])
+
+            ->add('roles', ChoiceType::class, [
+                'attr' => [
+                    'class' => 'form-control'
+                ],
+                'label' => 'Roles',
+                'multiple' => true, // Permet de sélectionner plusieurs valeurs
+                'expanded' => false, // Affiche une liste déroulante
+                'choices' => [
+                    'Employe' => 'ROLE_EMPLOYE',
+                    'Administrateur' => 'ROLE_ADMIN',
+                ],
+            ])
+
+
             ->add('email', EmailType::class, [
                 'attr' => [
                     'class' => 'form-control'
                 ],
                 'label' => 'E-mail'
             ])
+
             ->add('RGPDConsent', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
@@ -65,6 +82,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+                'label' => 'Mots de passe'
             ]);
     }
 
