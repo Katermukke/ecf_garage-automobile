@@ -29,8 +29,7 @@ class UserCrudController extends AbstractCrudController
                 ->setChoices([
                     'Administrateur' => 'ROLE_ADMINISTRATEUR',
                     'Employe' => 'ROLE_EMPLOYE'
-                ])
-                ->allowMultipleChoices()
+                ])->allowMultipleChoices()
                 ->renderAsBadges(),
             TextField::new('password', 'Mot de passe')
                 ->setFormType(PasswordType::class)

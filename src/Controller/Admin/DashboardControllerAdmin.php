@@ -2,18 +2,22 @@
 
 namespace App\Controller\Admin;
 
-use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
-use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use App\Entity\Avis;
+use App\Entity\User;
+use App\Entity\Horaires;
+use App\Entity\Services;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
-class DashboardControllerEmployeController extends AbstractDashboardController
+class DashboardControllerAdmin extends AbstractDashboardController
 {
-    #[Route('/admin', name: 'admin')]
+    #[Route('/admin/dashboard', name: 'admin_dashboard')]
     public function index(): Response
     {
-        return parent::index();
+        //return parent::index();
 
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
@@ -30,6 +34,7 @@ class DashboardControllerEmployeController extends AbstractDashboardController
         // (tip: it's easier if your template extends from @EasyAdmin/page/content.html.twig)
         //
         // return $this->render('some/path/my-dashboard.html.twig');
+        return $this->render('admin/dashboard.html.twig');
     }
 
     public function configureDashboard(): Dashboard
@@ -41,6 +46,9 @@ class DashboardControllerEmployeController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+        yield MenuItem::linkToCrud('Services', 'fa-solid fa-screwdriver-wrench', Services::class);
+        yield MenuItem::linkToCrud('Horaires', 'fa-solid fa-calendar-days', Horaires::class);
+        yield MenuItem::linkToCrud('Avis', 'fa-solid fa-calendar-days', Avis::class);
+        yield MenuItem::linkToCrud('User', 'fa-solid fa-user', User::class);
     }
 }
