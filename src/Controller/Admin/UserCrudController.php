@@ -34,8 +34,6 @@ class UserCrudController extends AbstractCrudController
             TextField::new('password', 'Mot de passe')
                 ->setFormType(PasswordType::class)
                 ->onlyOnForms(),
-            // $pageName === Crud::PAGE_NEW ? PasswordField::new('password')->onlyOnForms() : TextField::new('password')->hideOnForm(),
-            // Autres champs...
         ];
     }
 }

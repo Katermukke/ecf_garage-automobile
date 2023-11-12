@@ -48,7 +48,7 @@ class DashboardControllerAdmin extends AbstractDashboardController
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Services', 'fa-solid fa-screwdriver-wrench', Services::class);
         yield MenuItem::linkToCrud('Horaires', 'fa-solid fa-calendar-days', Horaires::class);
-        yield MenuItem::linkToCrud('Avis', 'fa-solid fa-calendar-days', Avis::class);
+        yield MenuItem::linkToCrud('Avis client', 'fa-solid fa-comment', Avis::class);
         yield MenuItem::linkToCrud('User', 'fa-solid fa-user', User::class);
     }
 }
