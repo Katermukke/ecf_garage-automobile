@@ -175,6 +175,7 @@ table {
 
 body {
   font-family: var(--font-audiowide);
+  background-color: red;
 }
 body .navbar {
   display: flex;
@@ -277,6 +278,8 @@ body header {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20rem;
+  background-color: red;
 }
 body header .voitureRouiller {
   width: 100vw;
