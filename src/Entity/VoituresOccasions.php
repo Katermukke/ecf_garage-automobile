@@ -16,9 +16,6 @@ class VoituresOccasions
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::BLOB)]
-    private $photo = null;
-
     #[ORM\Column]
     private ?int $prix = null;
 
@@ -37,7 +34,7 @@ class VoituresOccasions
     #[ORM\OneToOne(mappedBy: 'annoncesVoituresOccasions', cascade: ['persist', 'remove'])]
     private ?Annonces $annonces = null;
 
-    #[ORM\OneToMany(mappedBy: 'voituresOccasions', targetEntity: Images::class)]
+    #[ORM\OneToMany(mappedBy: 'voituresOccasions', targetEntity: Images::class, cascade: ['persist'], orphanRemoval: true)]
     private Collection $voituresOcassionsImages;
 
     #[ORM\ManyToOne(inversedBy: 'voituresOccasions')]
@@ -51,18 +48,6 @@ class VoituresOccasions
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getPhoto()
-    {
-        return $this->photo;
-    }
-
-    public function setPhoto($photo): static
-    {
-        $this->photo = $photo;
-
-        return $this;
     }
 
     public function getPrix(): ?int
