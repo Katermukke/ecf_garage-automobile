@@ -1,0 +1,58 @@
+.avis {
+  .headAvis {
+    margin: 6rem 0 6rem 0;
+    .titleAvis {
+      text-align: center;
+      font-family: var(--font-bethellen);
+      margin-bottom: 3rem;
+      span {
+        color: var(--color-orange);
+      }
+    }
+    p {
+      text-align: center;
+    }
+  }
+
+  .wrapperAvis {
+    display: flex;
+    column-gap: 5rem;
+    margin: 0 5rem 0 5rem;
+    .avis {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      height: 31rem;
+      width: calc(100% / 3);
+      background-color: var(--color-sand);
+      color: var(--color-white);
+      font-family: var(--font-audiowide);
+      padding: 3rem 2rem 3rem 2rem;
+
+      img {
+        border-radius: 50%;
+        object-fit: cover;
+        height: 9rem;
+        width: 9rem;
+      }
+
+      h4 {
+        span {
+          color: var(--color-orange);
+        }
+      }
+
+      p {
+        font-size: 0.8rem;
+        color: var(--color-white);
+        height: 8rem;
+
+        span {
+          color: var(--color-orange);
+        }
+      }
+    }
+  }
+}

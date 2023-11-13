@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html>
-{% include 'base_head.html.twig' %}
-    <body>
-        <nav class="navbar navbar-expand-lg">
-            {% include "_components/_navbar.html.twig" %}
-        </nav>
-        <header>
-            <img class="voitureRouiller" src="{{ asset('css/assets/voitureRouiller.png') }}" alt="wallpaper">
-            <div class="divNewGreatThings">
-                <img class="newGreatThings" src="{{ asset('css/assets/newGreatThings.png') }}" alt="newGreatThings">
-            </div>
-        </header>
-        <footer>
-            {% include "_components/_footer.html.twig" %}
-        </footer>
-    </body>
+	{% include 'base_head.html.twig' %}
+
+	<!-- BODY -->
+	<body>
+
+		<!-- NAVBAR -->
+		<nav class="navbar navbar-expand-lg">
+			{% include "_components/_navbar.html.twig" %}
+		</nav>
+
+		<!-- MAIN -->
+		<main>
+
+			<!-- HEADER -->
+			<header>
+				{% include "_components/_header.html.twig" %}
+			</header>
+
+			<!-- SECTION -->
+			<section class="categorie">
+				{% include "_components/_sectionCategorie.html.twig" %}
+			</section>
+
+			<!-- SECTION -->
+			<section class="services">
+				{% include "_components/_sectionServices.html.twig" %}
+			</section>
+
+			<!-- SECTION -->
+			<section class="avis">
+				{% include "_components/_sectionAvis.html.twig" %}
+			</section>
+		</main>
+
+		<!-- FOOTER -->
+		<footer>
+			{% include "_components/_footer.html.twig" %}
+		</footer>
+	</body>
 </html>

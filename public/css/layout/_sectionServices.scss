@@ -1,0 +1,223 @@
+.services {
+  .headServices {
+    margin: 6rem 0 6rem 0;
+    .titleServices {
+      text-align: center;
+      font-family: var(--font-bethellen);
+      margin-bottom: 3rem;
+      span {
+        color: var(--color-orange);
+      }
+    }
+    p {
+      text-align: center;
+    }
+  }
+
+  .wrapperServicesTop {
+    display: flex;
+    column-gap: 2rem;
+    margin: 0 2rem 2rem 2rem;
+    font-family: var(--font-audiowide);
+
+    .largeServices {
+      display: flex;
+      height: 32rem;
+      width: calc(100% / 2);
+      column-gap: 1rem;
+      background-color: var(--color-sand);
+
+      .soupape {
+        object-fit: cover;
+        height: 100%;
+        width: calc(100% / 2);
+      }
+
+      .servicesOne {
+        padding-top: 2rem;
+
+        h4 {
+          color: var(--color-orange);
+          margin-bottom: 1rem;
+        }
+
+        .information {
+          p {
+            color: var(--color-white);
+
+            .point {
+              color: var(--color-orange);
+            }
+          }
+        }
+      }
+    }
+
+    .splitServices {
+      display: flex;
+      column-gap: 2rem;
+      height: 32rem;
+      width: calc(100% / 2);
+
+      .servicesTwo {
+        width: calc(100% / 2);
+        background-color: var(--color-sand);
+
+        .huile {
+          width: 100%;
+        }
+        .information {
+          padding: 2rem 0 0 2rem;
+
+          h4 {
+            color: var(--color-orange);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+          }
+
+          .paragraph {
+            p {
+              color: var(--color-white);
+              font-size: 0.8rem;
+
+              .point {
+                color: var(--color-orange);
+              }
+            }
+          }
+        }
+      }
+      .servicesThree {
+        width: calc(100% / 2);
+        background-color: var(--color-sand);
+
+        .plaquette {
+          width: 100%;
+        }
+        .information {
+          padding: 2rem 0 0 2rem;
+
+          h4 {
+            color: var(--color-orange);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+          }
+
+          .paragraph {
+            p {
+              color: var(--color-white);
+              font-size: 0.8rem;
+
+              .point {
+                color: var(--color-orange);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .wrapperServicesBottom {
+    display: flex;
+    column-gap: 2rem;
+    margin: 0 2rem 0 2rem;
+    font-family: var(--font-audiowide);
+
+    .splitServicesTwo {
+      display: flex;
+      column-gap: 2rem;
+      height: 32rem;
+      width: calc(100% / 2);
+
+      .servicesFour {
+        width: calc(100% / 2);
+        background-color: var(--color-sand);
+
+        .courroie {
+          width: 100%;
+        }
+        .information {
+          padding: 2rem 0 0 2rem;
+
+          h4 {
+            color: var(--color-orange);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+          }
+
+          .paragraph {
+            p {
+              color: var(--color-white);
+              font-size: 0.8rem;
+
+              .point {
+                color: var(--color-orange);
+              }
+            }
+          }
+        }
+      }
+      .servicesFive {
+        width: calc(100% / 2);
+        background-color: var(--color-sand);
+
+        .suspension {
+          width: 100%;
+        }
+        .information {
+          padding: 2rem 0 0 2rem;
+
+          h4 {
+            color: var(--color-orange);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+          }
+
+          .paragraph {
+            p {
+              color: var(--color-white);
+              font-size: 0.8rem;
+
+              .point {
+                color: var(--color-orange);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .largeServicesTwo {
+      display: flex;
+      height: 32rem;
+      width: calc(100% / 2);
+      column-gap: 1rem;
+      background-color: var(--color-sand);
+
+      .batterie {
+        object-fit: cover;
+        height: 100%;
+        width: calc(100% / 2);
+      }
+      .servicesSix {
+        padding-top: 2rem;
+
+        h4 {
+          color: var(--color-orange);
+          margin-bottom: 1rem;
+        }
+
+        .information {
+          p {
+            color: var(--color-white);
+
+            .point {
+              color: var(--color-orange);
+            }
+          }
+        }
+      }
+    }
+  }
+}
