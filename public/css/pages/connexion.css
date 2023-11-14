@@ -161,14 +161,15 @@ table {
   --color-orange: #e47610;
   --color-brown: #421e0a;
   --color-beige: #ffe0bc;
-  --color-brown-clear: #bfac9a;
+  --color-beige-dark: #bfac9a;
   --background-color-white: #ffffff;
   --background-color-black: #000000;
   --background-color-sand: #e4bf94;
   --background-color-orange: #e47610;
   --background-color-brown: #421e0a;
+  --background-color-brown-clear: #774c34;
   --background-color-beige: #ffe0bc;
-  --background-color-brown-clear: #bfac9a;
+  --background-color-beige-dark: #bfac9a;
   --font-audiowide: "audiowide";
   --font-bethellen: "bethellen";
 }
@@ -234,8 +235,8 @@ body .navbar .contain .navbar-brand {
   }
 }
 body .navbar .contain .navbar-brand img {
-  height: 2.2rem;
-  width: 12rem;
+  height: 1.8rem;
+  width: 10rem;
 }
 body .navbar .contain .navbar-collapse {
   flex-grow: 0;
@@ -245,11 +246,20 @@ body .navbar .contain .navbar-collapse .excvtend {
   display: flex;
   justify-content: center;
   width: 100%;
+  margin: 0 5rem 0 5rem;
+}
+@media (max-width: 992px) {
+  body .navbar .contain .navbar-collapse .excvtend {
+    margin: 0;
+  }
 }
 body .navbar .contain .navbar-collapse .excvtend .navbar-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 78%;
+}
+body .navbar .contain .navbar-collapse .excvtend .navbar-nav li a {
+  font-size: 0.7rem;
 }
 body .navbar .contain .navbar-collapse .seConnecter {
   display: flex;
@@ -265,11 +275,14 @@ body .navbar .contain .navbar-collapse .seConnecter {
   }
 }
 body .navbar .contain .navbar-collapse .seConnecter svg {
-  height: 1rem;
-  width: 1rem;
+  height: 0.8rem;
+  width: 0.8rem;
 }
 body .navbar .contain .navbar-collapse .seConnecter .btn {
   width: auto;
+}
+body .navbar .contain .navbar-collapse .seConnecter .btn a {
+  font-size: 0.75rem;
 }
 body .container {
   height: 90vh;

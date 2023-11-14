@@ -1,18 +1,24 @@
 header {
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 
   .voitureRouiller {
-    background-image: url(assets/voitureRouiller.png);
+    position: relative;
+    background-image: url(assets/coccinelle2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 
     .newGreatThings {
-      width: calc(100% / 3);
-      height: calc(100% / 3);
+      display: block;
+      transform: translate(50%, 30%);
+      width: 50%;
+      height: auto;
     }
   }
 }

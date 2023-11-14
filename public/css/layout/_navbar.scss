@@ -53,8 +53,8 @@
       }
 
       img {
-        height: 2.2rem;
-        width: 12rem;
+        height: 1.8rem;
+        width: 10rem;
       }
     }
 
@@ -69,11 +69,22 @@
         display: flex;
         justify-content: center;
         width: 100%;
+        margin: 0 5rem 0 5rem;
+
+        @include navbar {
+          margin: 0;
+        }
 
         .navbar-nav {
           display: flex;
-          justify-content: space-between;
+          justify-content: space-around;
           width: 78%;
+
+          li {
+            a {
+              font-size: 0.7rem;
+            }
+          }
         }
       }
 
@@ -90,12 +101,16 @@
         }
 
         svg {
-          height: 1rem;
-          width: 1rem;
+          height: 0.8rem;
+          width: 0.8rem;
         }
 
         .btn {
           width: auto;
+
+          a {
+            font-size: 0.75rem;
+          }
         }
       }
     }

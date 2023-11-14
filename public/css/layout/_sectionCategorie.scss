@@ -17,7 +17,8 @@
 
   .wrapperCategorie {
     display: flex;
-    height: 35rem;
+    height: 27rem;
+    background-color: var(--color-sand);
     font-family: var(--font-audiowide);
     margin-bottom: 6rem;
 
@@ -33,15 +34,15 @@
     }
 
     .categorie:nth-child(1) {
-      background-image: url(assets/voitureStation.jpeg);
+      background-image: url(assets/moteur.jpg);
     }
 
     .categorie:nth-child(2) {
-      background-image: url(assets/voitureAnnee80.jpeg);
+      background-image: url(assets/coccinelle3.jpg);
     }
 
     .categorie:nth-child(3) {
-      background-image: url(assets/receptioniste.jpeg);
+      background-image: url(assets/mecanicien.jpeg);
     }
   }
 
@@ -49,8 +50,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25rem;
-    column-gap: 1rem;
+    height: 15rem;
+    column-gap: 5rem;
+    padding: 8rem;
     background-color: var(--color-sand);
 
     .item {
@@ -67,6 +69,7 @@
 
       p {
         height: 2rem;
+        font-size: 0.8rem;
         color: var(--color-white);
       }
     }
