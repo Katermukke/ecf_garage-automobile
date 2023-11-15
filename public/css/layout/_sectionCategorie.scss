@@ -18,9 +18,14 @@
   .wrapperCategorie {
     display: flex;
     height: 27rem;
-    background-color: var(--color-sand);
     font-family: var(--font-audiowide);
     margin-bottom: 6rem;
+
+    @include lg-max {
+      flex-direction: column;
+      align-items: center;
+      height: 35rem;
+    }
 
     .categorie {
       background-size: cover;
@@ -31,6 +36,10 @@
       justify-content: center;
       align-items: center;
       color: var(--color-white);
+
+      @include lg-max {
+        width: 100%;
+      }
     }
 
     .categorie:nth-child(1) {
@@ -52,8 +61,14 @@
     align-items: center;
     height: 15rem;
     column-gap: 5rem;
-    padding: 8rem;
+    padding: 2rem;
     background-color: var(--color-sand);
+
+    @include md-max {
+      flex-direction: column;
+      height: auto;
+      margin: 0 3rem 0 3rem;
+    }
 
     .item {
       display: flex;
@@ -63,6 +78,13 @@
       width: calc(100% / 4);
       font-family: var(--font-audiowide);
 
+      @include md-max {
+        height: 12rem;
+        width: 70%;
+        border-bottom: solid 0.1rem var(--color-white);
+        margin-bottom: 2rem;
+      }
+
       svg {
         margin-bottom: 2rem;
       }
@@ -71,6 +93,10 @@
         height: 2rem;
         font-size: 0.8rem;
         color: var(--color-white);
+
+        @include md-max {
+          height: auto;
+        }
       }
     }
   }

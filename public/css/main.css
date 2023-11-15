@@ -324,9 +324,15 @@ body main .categorie .headCategorie p {
 body main .categorie .wrapperCategorie {
   display: flex;
   height: 27rem;
-  background-color: var(--color-sand);
   font-family: var(--font-audiowide);
   margin-bottom: 6rem;
+}
+@media (max-width: 1024px) {
+  body main .categorie .wrapperCategorie {
+    flex-direction: column;
+    align-items: center;
+    height: 35rem;
+  }
 }
 body main .categorie .wrapperCategorie .categorie {
   background-size: cover;
@@ -337,6 +343,11 @@ body main .categorie .wrapperCategorie .categorie {
   justify-content: center;
   align-items: center;
   color: var(--color-white);
+}
+@media (max-width: 1024px) {
+  body main .categorie .wrapperCategorie .categorie {
+    width: 100%;
+  }
 }
 body main .categorie .wrapperCategorie .categorie:nth-child(1) {
   background-image: url(assets/moteur.jpg);
@@ -354,8 +365,15 @@ body main .categorie .modalite {
   height: 15rem;
   -moz-column-gap: 5rem;
        column-gap: 5rem;
-  padding: 8rem;
+  padding: 2rem;
   background-color: var(--color-sand);
+}
+@media (max-width: 768px) {
+  body main .categorie .modalite {
+    flex-direction: column;
+    height: auto;
+    margin: 0 3rem 0 3rem;
+  }
 }
 body main .categorie .modalite .item {
   display: flex;
@@ -365,6 +383,14 @@ body main .categorie .modalite .item {
   width: 25%;
   font-family: var(--font-audiowide);
 }
+@media (max-width: 768px) {
+  body main .categorie .modalite .item {
+    height: 12rem;
+    width: 70%;
+    border-bottom: solid 0.1rem var(--color-white);
+    margin-bottom: 2rem;
+  }
+}
 body main .categorie .modalite .item svg {
   margin-bottom: 2rem;
 }
@@ -372,6 +398,11 @@ body main .categorie .modalite .item p {
   height: 2rem;
   font-size: 0.8rem;
   color: var(--color-white);
+}
+@media (max-width: 768px) {
+  body main .categorie .modalite .item p {
+    height: auto;
+  }
 }
 body main .services .headServices {
   margin: 6rem 0 6rem 0;
@@ -395,6 +426,13 @@ body main .services .wrapperServicesTop {
   margin: 0 2rem 2rem 2rem;
   font-family: var(--font-audiowide);
 }
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesTop {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+}
 body main .services .wrapperServicesTop .largeServices {
   display: flex;
   height: 100%;
@@ -403,11 +441,22 @@ body main .services .wrapperServicesTop .largeServices {
        column-gap: 1rem;
   background-color: var(--color-sand);
 }
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesTop .largeServices {
+    margin-bottom: 2rem;
+    width: auto;
+  }
+}
 body main .services .wrapperServicesTop .largeServices .soupape {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
   width: 50%;
+}
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesTop .largeServices .soupape {
+    height: auto;
+  }
 }
 body main .services .wrapperServicesTop .largeServices .servicesOne {
   padding-top: 2rem;
@@ -416,6 +465,11 @@ body main .services .wrapperServicesTop .largeServices .servicesOne h4 {
   color: var(--color-orange);
   margin-bottom: 1rem;
   font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesTop .largeServices .servicesOne h4 {
+    font-size: 1rem;
+  }
 }
 body main .services .wrapperServicesTop .largeServices .servicesOne .information p {
   color: var(--color-white);
@@ -431,20 +485,47 @@ body main .services .wrapperServicesTop .splitServices {
   height: 100%;
   width: 50%;
 }
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesTop .splitServices {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
 body main .services .wrapperServicesTop .splitServices .servicesTwo {
   width: 50%;
   background-color: var(--color-sand);
+}
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesTop .splitServices .servicesTwo {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 body main .services .wrapperServicesTop .splitServices .servicesTwo .huile {
   width: 100%;
 }
 body main .services .wrapperServicesTop .splitServices .servicesTwo .information {
   padding: 2rem 0 0 2rem;
+  height: 30rem;
+}
+@media (max-width: 768px) {
+  body main .services .wrapperServicesTop .splitServices .servicesTwo .information {
+    padding: 2rem 1rem 0 1rem;
+  }
 }
 body main .services .wrapperServicesTop .splitServices .servicesTwo .information h4 {
   color: var(--color-orange);
   margin-bottom: 1rem;
   font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesTop .splitServices .servicesTwo .information h4 {
+    font-size: 1rem;
+  }
+}
+body main .services .wrapperServicesTop .splitServices .servicesTwo .information .paragraph {
+  padding-bottom: 2rem;
 }
 body main .services .wrapperServicesTop .splitServices .servicesTwo .information .paragraph p {
   color: var(--color-white);
@@ -457,16 +538,31 @@ body main .services .wrapperServicesTop .splitServices .servicesThree {
   width: 50%;
   background-color: var(--color-sand);
 }
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesTop .splitServices .servicesThree {
+    width: 100%;
+  }
+}
 body main .services .wrapperServicesTop .splitServices .servicesThree .plaquette {
   width: 100%;
 }
 body main .services .wrapperServicesTop .splitServices .servicesThree .information {
   padding: 2rem 0 0 2rem;
 }
+@media (max-width: 768px) {
+  body main .services .wrapperServicesTop .splitServices .servicesThree .information {
+    padding: 2rem 1rem 0 1rem;
+  }
+}
 body main .services .wrapperServicesTop .splitServices .servicesThree .information h4 {
   color: var(--color-orange);
   margin-bottom: 1rem;
   font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesTop .splitServices .servicesThree .information h4 {
+    font-size: 1rem;
+  }
 }
 body main .services .wrapperServicesTop .splitServices .servicesThree .information .paragraph p {
   color: var(--color-white);
@@ -483,6 +579,13 @@ body main .services .wrapperServicesBottom {
   height: 28rem;
   font-family: var(--font-audiowide);
 }
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesBottom {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+}
 body main .services .wrapperServicesBottom .splitServicesTwo {
   display: flex;
   -moz-column-gap: 2rem;
@@ -490,9 +593,22 @@ body main .services .wrapperServicesBottom .splitServicesTwo {
   height: 100%;
   width: 50%;
 }
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesBottom .splitServicesTwo {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
 body main .services .wrapperServicesBottom .splitServicesTwo .servicesFour {
   width: 50%;
   background-color: var(--color-sand);
+}
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesBottom .splitServicesTwo .servicesFour {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 body main .services .wrapperServicesBottom .splitServicesTwo .servicesFour .courroie {
   width: 100%;
@@ -500,10 +616,25 @@ body main .services .wrapperServicesBottom .splitServicesTwo .servicesFour .cour
 body main .services .wrapperServicesBottom .splitServicesTwo .servicesFour .information {
   padding: 2rem 0 0 2rem;
 }
+@media (max-width: 768px) {
+  body main .services .wrapperServicesBottom .splitServicesTwo .servicesFour .information {
+    padding: 2rem 1rem 0 1rem;
+  }
+}
 body main .services .wrapperServicesBottom .splitServicesTwo .servicesFour .information h4 {
   color: var(--color-orange);
   margin-bottom: 1rem;
   font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesBottom .splitServicesTwo .servicesFour .information h4 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  body main .services .wrapperServicesBottom .splitServicesTwo .servicesFour .information h4 {
+    font-size: 0.8rem;
+  }
 }
 body main .services .wrapperServicesBottom .splitServicesTwo .servicesFour .information .paragraph p {
   color: var(--color-white);
@@ -516,16 +647,37 @@ body main .services .wrapperServicesBottom .splitServicesTwo .servicesFive {
   width: 50%;
   background-color: var(--color-sand);
 }
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesBottom .splitServicesTwo .servicesFive {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
 body main .services .wrapperServicesBottom .splitServicesTwo .servicesFive .suspension {
   width: 100%;
 }
 body main .services .wrapperServicesBottom .splitServicesTwo .servicesFive .information {
   padding: 2rem 0 0 2rem;
 }
+@media (max-width: 768px) {
+  body main .services .wrapperServicesBottom .splitServicesTwo .servicesFive .information {
+    padding: 2rem 1rem 0 1rem;
+  }
+}
 body main .services .wrapperServicesBottom .splitServicesTwo .servicesFive .information h4 {
   color: var(--color-orange);
   margin-bottom: 1rem;
   font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesBottom .splitServicesTwo .servicesFive .information h4 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  body main .services .wrapperServicesBottom .splitServicesTwo .servicesFive .information h4 {
+    font-size: 0.8rem;
+  }
 }
 body main .services .wrapperServicesBottom .splitServicesTwo .servicesFive .information .paragraph p {
   color: var(--color-white);
@@ -542,11 +694,21 @@ body main .services .wrapperServicesBottom .largeServicesTwo {
        column-gap: 1rem;
   background-color: var(--color-sand);
 }
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesBottom .largeServicesTwo {
+    width: auto;
+  }
+}
 body main .services .wrapperServicesBottom .largeServicesTwo .batterie {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
   width: 50%;
+}
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesBottom .largeServicesTwo .batterie {
+    height: auto;
+  }
 }
 body main .services .wrapperServicesBottom .largeServicesTwo .servicesSix {
   padding-top: 2rem;
@@ -554,7 +716,12 @@ body main .services .wrapperServicesBottom .largeServicesTwo .servicesSix {
 body main .services .wrapperServicesBottom .largeServicesTwo .servicesSix h4 {
   color: var(--color-orange);
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
+}
+@media (max-width: 1024px) {
+  body main .services .wrapperServicesBottom .largeServicesTwo .servicesSix h4 {
+    font-size: 1rem;
+  }
 }
 body main .services .wrapperServicesBottom .largeServicesTwo .servicesSix .information p {
   color: var(--color-white);
@@ -597,7 +764,7 @@ body main .avis .wrapperAvis {
     align-items: center;
   }
 }
-body main .avis .wrapperAvis .avis {
+body main .avis .wrapperAvis .cardAvis {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -612,12 +779,13 @@ body main .avis .wrapperAvis .avis {
   overflow: hidden;
 }
 @media (max-width: 768px) {
-  body main .avis .wrapperAvis .avis {
+  body main .avis .wrapperAvis .cardAvis {
     margin-bottom: 3rem;
-    width: 80%;
+    width: 100%;
+    height: 25rem;
   }
 }
-body main .avis .wrapperAvis .avis img {
+body main .avis .wrapperAvis .cardAvis img {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -625,22 +793,27 @@ body main .avis .wrapperAvis .avis img {
   width: 9rem;
 }
 @media (max-width: 1024px) {
-  body main .avis .wrapperAvis .avis img {
+  body main .avis .wrapperAvis .cardAvis img {
     height: 7rem;
     width: 7rem;
   }
 }
-body main .avis .wrapperAvis .avis h4 span {
+body main .avis .wrapperAvis .cardAvis h4 span {
   color: var(--color-orange);
 }
-body main .avis .wrapperAvis .avis p {
+@media (max-width: 768px) {
+  body main .avis .wrapperAvis .cardAvis svg {
+    height: 0.9rem;
+  }
+}
+body main .avis .wrapperAvis .cardAvis p {
   font-size: 0.8rem;
   color: var(--color-white);
   height: 8rem;
   margin: 0;
   overflow-y: scroll;
 }
-body main .avis .wrapperAvis .avis p span {
+body main .avis .wrapperAvis .cardAvis p span {
   color: var(--color-orange);
 }
 body main .avis .readAvis {
@@ -654,6 +827,7 @@ body main .avis .readAvis .titleReadAvis {
   font-family: var(--font-bethellen);
   margin: 2rem 0 2rem 0;
   color: var(--color-white);
+  font-size: 1.2rem;
 }
 body main .avis .readAvis .titleReadAvis .point {
   color: var(--color-orange);
@@ -667,7 +841,7 @@ body main .avis .readAvis .star-rating .rating {
   display: none;
 }
 body main .avis .readAvis .star-rating label {
-  font-size: 30px;
+  font-size: 1.9rem;
   color: var(--color-beige);
   cursor: pointer;
 }
@@ -695,6 +869,11 @@ body main .avis .readAvis textarea {
   padding-left: 2rem;
   vertical-align: top;
   font-family: var(--font-audiowide);
+}
+@media (max-width: 768px) {
+  body main .avis .readAvis textarea {
+    font-size: 0.7rem;
+  }
 }
 body main .avis .readAvis textarea .point {
   color: var(--color-orange);
@@ -725,6 +904,7 @@ body footer .newsletter p {
 body footer .newsletter .input {
   display: flex;
   justify-content: center;
+  padding: 0 10rem 0 10rem;
 }
 @media (max-width: 768px) {
   body footer .newsletter .input {
@@ -782,6 +962,12 @@ body footer .footer .wrapperBloc {
     align-items: center;
   }
 }
+@media (max-width: 768px) {
+  body footer .footer .wrapperBloc {
+    margin-bottom: 3rem;
+    width: 100%;
+  }
+}
 body footer .footer .wrapperBloc .miniWrapper {
   margin: 3rem 0 2rem 0;
   color: var(--color-white);
@@ -793,6 +979,7 @@ body footer .footer .wrapperBloc .miniWrapper h4 {
 @media (max-width: 1024px) {
   body footer .footer .wrapperBloc .miniWrapper h4 {
     text-align: center;
+    font-size: 1.2rem;
   }
 }
 body footer .footer .wrapperBloc .miniWrapper h4 .point {
@@ -813,9 +1000,19 @@ body footer .footer .wrapperBloc .miniWrapper .direction a {
   color: inherit;
   text-decoration: none;
 }
+@media (max-width: 1024px) {
+  body footer .footer .wrapperBloc .miniWrapper .direction a {
+    font-size: 0.8rem;
+  }
+}
 body footer .footer .wrapperBloc .miniWrapper .direction p {
   color: inherit;
   text-decoration: none;
+}
+@media (max-width: 1024px) {
+  body footer .footer .wrapperBloc .miniWrapper .direction p {
+    font-size: 0.8rem;
+  }
 }
 body footer .footer .wrapperBloc .information .direction {
   display: flex;
@@ -844,6 +1041,7 @@ body footer .line p {
 @media (max-width: 1024px) {
   body footer .line p {
     width: auto;
+    font-size: 0.8rem;
   }
 }
 body footer .line .social {
@@ -851,6 +1049,17 @@ body footer .line .social {
   display: flex;
   padding: 0 3rem 0 3rem;
   justify-content: space-around;
+}
+@media (max-width: 768px) {
+  body footer .line .social {
+    padding: 0;
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  body footer .line .social svg {
+    height: 1rem;
+  }
 }
 body footer .line a {
   width: 33.3333333333%;
@@ -861,5 +1070,6 @@ body footer .line a {
 @media (max-width: 1024px) {
   body footer .line a {
     text-align: center;
+    font-size: 0.8rem;
   }
 }/*# sourceMappingURL=main.css.map */

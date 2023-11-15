@@ -9,8 +9,11 @@
 	<meta property="og:url" content="http://www.exemple.com"/>
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-	{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/main.css') }}">
-	{% endblock %}
+	{% if page_style is defined %}
+		<link rel="stylesheet" href="{{ asset(page_style) }}">
+	{% else %}
+		<link rel="stylesheet" href="{{ asset('css/main.css') }}">
+	{% endif %}
 	<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 	{% block script %}
 		<script type="module" src="{{'js/script.js'}}"></script>
