@@ -1,0 +1,23 @@
+.voitureOccasions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .headOccasions {
+    margin: 5rem 0 5rem 0;
+    .titleOccasions {
+      text-align: center;
+      font-family: var(--font-bethellen);
+      margin-bottom: 3rem;
+      span {
+        color: var(--color-orange);
+      }
+    }
+    p {
+      text-align: center;
+      padding: 0 3.5rem 0 3.5rem;
+    }
+  }
+
+  @import "../components/cardOccasions";
+}

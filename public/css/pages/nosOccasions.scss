@@ -8,7 +8,7 @@ body {
   font-family: var(--font-audiowide);
   @import "../layout/navbar";
   main {
-    @import "../components/cardOccasions";
+    @import "../layout/sectionOccasions";
   }
   footer {
     @import "../layout/footer";

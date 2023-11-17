@@ -284,6 +284,106 @@ body .navbar .contain .navbar-collapse .seConnecter .btn {
 body .navbar .contain .navbar-collapse .seConnecter .btn a {
   font-size: 0.75rem;
 }
+body main .voitureOccasions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body main .voitureOccasions .headOccasions {
+  margin: 5rem 0 5rem 0;
+}
+body main .voitureOccasions .headOccasions .titleOccasions {
+  text-align: center;
+  font-family: var(--font-bethellen);
+  margin-bottom: 3rem;
+}
+body main .voitureOccasions .headOccasions .titleOccasions span {
+  color: var(--color-orange);
+}
+body main .voitureOccasions .headOccasions p {
+  text-align: center;
+  padding: 0 3.5rem 0 3.5rem;
+}
+body main .voitureOccasions .cardOccasions {
+  width: 80%;
+  height: 18rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+@media (max-width: 1024px) {
+  body main .voitureOccasions .cardOccasions {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+}
+body main .voitureOccasions .cardOccasions img {
+  width: 40%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 1024px) {
+  body main .voitureOccasions .cardOccasions img {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  body main .voitureOccasions .cardOccasions img {
+    width: 100%;
+  }
+}
+body main .voitureOccasions .cardOccasions .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 58%;
+  background-color: var(--color-sand);
+  padding: 2rem 2rem 4rem 2rem;
+  font-family: var(--font-audiowide);
+  color: var(--color-white);
+}
+@media (max-width: 1024px) {
+  body main .voitureOccasions .cardOccasions .description {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  body main .voitureOccasions .cardOccasions .description {
+    width: 100%;
+  }
+}
+body main .voitureOccasions .cardOccasions .description .titleDescription {
+  font-size: 1.2rem;
+}
+body main .voitureOccasions .cardOccasions .description .price {
+  color: inherit;
+}
+body main .voitureOccasions .cardOccasions .description .payment {
+  padding: 0.2rem;
+  text-align: center;
+  width: 9.5rem;
+  background-color: var(--color-orange);
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  color: inherit;
+  margin-bottom: 2rem;
+}
+body main .voitureOccasions .cardOccasions .description .filter {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-white);
+}
+body main .voitureOccasions .cardOccasions .description .filter div {
+  color: inherit;
+}
+@media (max-width: 1024px) {
+  body main .voitureOccasions .cardOccasions .description .filter div {
+    font-size: 0.8rem;
+  }
+}
 body footer .newsletter {
   height: 28rem;
   padding: 4rem 0 4rem 0;
