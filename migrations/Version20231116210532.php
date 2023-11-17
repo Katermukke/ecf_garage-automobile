@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20231111214154 extends AbstractMigration
+final class Version20231116210532 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -24,9 +24,9 @@ final class Version20231111214154 extends AbstractMigration
         $this->addSql('CREATE TABLE avis (id INT AUTO_INCREMENT NOT NULL, user_avis_id INT DEFAULT NULL, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, commentaire VARCHAR(2000) NOT NULL, date DATE NOT NULL, note INT NOT NULL, valide TINYINT(1) NOT NULL, INDEX IDX_8F91ABF041736E95 (user_avis_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE formulaire_de_renseignement (id INT AUTO_INCREMENT NOT NULL, user_formulaire_id INT DEFAULT NULL, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, telephone VARCHAR(10) NOT NULL, email VARCHAR(180) NOT NULL, sujet VARCHAR(255) NOT NULL, message LONGTEXT NOT NULL, valide VARCHAR(255) NOT NULL, INDEX IDX_8AF6D566BEDDFBCB (user_formulaire_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE horaires (id INT AUTO_INCREMENT NOT NULL, user_horaires_id INT DEFAULT NULL, jours VARCHAR(10) NOT NULL, horaires_ouvertures_matin TIME DEFAULT NULL, horaires_fermetures_matin TIME DEFAULT NULL, horaires_ouvertures_soir TIME DEFAULT NULL, horaires_fermetures_soir TIME DEFAULT NULL, INDEX IDX_39B7118F23EF551E (user_horaires_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE images (id INT AUTO_INCREMENT NOT NULL, voitures_occasions_id INT DEFAULT NULL, nom VARCHAR(50) DEFAULT NULL, size INT NOT NULL, updated_at DATETIME DEFAULT NULL COMMENT \'(DC2Type:datetime_immutable)\', INDEX IDX_E01FBE6A5B12944E (voitures_occasions_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE marques (id INT AUTO_INCREMENT NOT NULL, marques_modeles_id INT NOT NULL, nom_marques VARCHAR(50) NOT NULL, INDEX IDX_67884F2D415925FC (marques_modeles_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE modeles (id INT AUTO_INCREMENT NOT NULL, nom_modeles VARCHAR(50) NOT NULL, cylindree VARCHAR(50) NOT NULL, chevaux VARCHAR(10) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE images (id INT AUTO_INCREMENT NOT NULL, voitures_occasions_id INT DEFAULT NULL, nom VARCHAR(50) DEFAULT NULL, size INT DEFAULT NULL, updated_at DATETIME DEFAULT NULL COMMENT \'(DC2Type:datetime_immutable)\', INDEX IDX_E01FBE6A5B12944E (voitures_occasions_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE marques (id INT AUTO_INCREMENT NOT NULL, nom_marques VARCHAR(50) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE modeles (id INT AUTO_INCREMENT NOT NULL, marques_modeles_id INT DEFAULT NULL, nom_modeles VARCHAR(50) NOT NULL, INDEX IDX_7EAE1448415925FC (marques_modeles_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE roles (id INT AUTO_INCREMENT NOT NULL, user_roles_id INT NOT NULL, nom VARCHAR(50) NOT NULL, INDEX IDX_B63E2EC7D84AB5C4 (user_roles_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE services (id INT AUTO_INCREMENT NOT NULL, user_services_id INT DEFAULT NULL, nom VARCHAR(50) NOT NULL, description VARCHAR(255) NOT NULL, INDEX IDX_7332E1697EE6F54 (user_services_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, nom VARCHAR(255) NOT NULL, prenom VARCHAR(255) NOT NULL, email VARCHAR(180) NOT NULL, roles JSON NOT NULL, password VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_8D93D649E7927C74 (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
@@ -38,7 +38,7 @@ final class Version20231111214154 extends AbstractMigration
         $this->addSql('ALTER TABLE formulaire_de_renseignement ADD CONSTRAINT FK_8AF6D566BEDDFBCB FOREIGN KEY (user_formulaire_id) REFERENCES user (id)');
         $this->addSql('ALTER TABLE horaires ADD CONSTRAINT FK_39B7118F23EF551E FOREIGN KEY (user_horaires_id) REFERENCES user (id)');
         $this->addSql('ALTER TABLE images ADD CONSTRAINT FK_E01FBE6A5B12944E FOREIGN KEY (voitures_occasions_id) REFERENCES voitures_occasions (id)');
-        $this->addSql('ALTER TABLE marques ADD CONSTRAINT FK_67884F2D415925FC FOREIGN KEY (marques_modeles_id) REFERENCES modeles (id)');
+        $this->addSql('ALTER TABLE modeles ADD CONSTRAINT FK_7EAE1448415925FC FOREIGN KEY (marques_modeles_id) REFERENCES marques (id)');
         $this->addSql('ALTER TABLE roles ADD CONSTRAINT FK_B63E2EC7D84AB5C4 FOREIGN KEY (user_roles_id) REFERENCES user (id)');
         $this->addSql('ALTER TABLE services ADD CONSTRAINT FK_7332E1697EE6F54 FOREIGN KEY (user_services_id) REFERENCES user (id)');
         $this->addSql('ALTER TABLE voitures_occasions ADD CONSTRAINT FK_7BD5F28B8877BDB2 FOREIGN KEY (voitures_ocassions_marques_id) REFERENCES marques (id)');
@@ -53,7 +53,7 @@ final class Version20231111214154 extends AbstractMigration
         $this->addSql('ALTER TABLE formulaire_de_renseignement DROP FOREIGN KEY FK_8AF6D566BEDDFBCB');
         $this->addSql('ALTER TABLE horaires DROP FOREIGN KEY FK_39B7118F23EF551E');
         $this->addSql('ALTER TABLE images DROP FOREIGN KEY FK_E01FBE6A5B12944E');
-        $this->addSql('ALTER TABLE marques DROP FOREIGN KEY FK_67884F2D415925FC');
+        $this->addSql('ALTER TABLE modeles DROP FOREIGN KEY FK_7EAE1448415925FC');
         $this->addSql('ALTER TABLE roles DROP FOREIGN KEY FK_B63E2EC7D84AB5C4');
         $this->addSql('ALTER TABLE services DROP FOREIGN KEY FK_7332E1697EE6F54');
         $this->addSql('ALTER TABLE voitures_occasions DROP FOREIGN KEY FK_7BD5F28B8877BDB2');

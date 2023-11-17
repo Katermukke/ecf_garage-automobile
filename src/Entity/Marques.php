@@ -21,13 +21,13 @@ class Marques
     #[ORM\OneToMany(mappedBy: 'voituresOcassionsMarques', targetEntity: VoituresOccasions::class)]
     private Collection $voituresOccasions;
 
-    #[ORM\ManyToOne(inversedBy: 'marques')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Modeles $marquesModeles = null;
+    #[ORM\OneToMany(mappedBy: 'marquesModeles', targetEntity: Modeles::class)]
+    private Collection $marquesModeles;
 
     public function __construct()
     {
         $this->voituresOccasions = new ArrayCollection();
+        $this->marquesModeles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -77,14 +77,38 @@ class Marques
         return $this;
     }
 
-    public function getMarquesModeles(): ?Modeles
+    /**
+     * @return Collection<int, Modeles>
+     */
+    public function getMarquesModeles(): Collection
     {
         return $this->marquesModeles;
     }
 
-    public function setMarquesModeles(?Modeles $marquesModeles): static
+    public function setMarquesModeles(Collection $modeles): self
     {
-        $this->marquesModeles = $marquesModeles;
+        $this->marquesModeles = $modeles;
+        return $this;
+    }
+
+    public function addMarquesModele(Modeles $marquesModele): static
+    {
+        if (!$this->marquesModeles->contains($marquesModele)) {
+            $this->marquesModeles->add($marquesModele);
+            $marquesModele->setMarquesModeles($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMarquesModele(Modeles $marquesModele): static
+    {
+        if ($this->marquesModeles->removeElement($marquesModele)) {
+            // set the owning side to null (unless already changed)
+            if ($marquesModele->getMarquesModeles() === $this) {
+                $marquesModele->setMarquesModeles(null);
+            }
+        }
 
         return $this;
     }
