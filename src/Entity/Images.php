@@ -36,7 +36,7 @@ class Images
         return $this->id;
     }
 
-    public function getFile(): ?string
+    public function getFile(): ?File
     {
         return $this->file;
     }
@@ -98,5 +98,10 @@ class Images
         $this->nom = $nom;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->nom;
     }
 }

@@ -43,6 +43,7 @@ class VoituresOccasions
     public function __construct()
     {
         $this->voituresOcassionsImages = new ArrayCollection();
+        $this->voituresOcassionsMarques = null;
     }
 
     public function getId(): ?int
