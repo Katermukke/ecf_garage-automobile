@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\FormulaireDeRenseignement;
 use App\Entity\VoituresOccasions;
 use App\Entity\Avis;
+use App\Entity\Marques;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -46,6 +47,7 @@ class DashboardControllerEmploye extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Liste des voitures', 'fa-solid fa-plus', VoituresOccasions::class);
+        yield MenuItem::linkToCrud('Marques', 'fa-solid fa-comment', Marques::class);
         yield MenuItem::linkToCrud('Information', 'fa-solid fa-circle-info', FormulaireDeRenseignement::class);
         yield MenuItem::linkToCrud('Avis client', 'fa-solid fa-comment', Avis::class);
     }
