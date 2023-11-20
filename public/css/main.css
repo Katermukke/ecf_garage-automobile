@@ -783,7 +783,7 @@ body main .avis .wrapperAvis .cardAvis {
   flex-direction: column;
   text-align: center;
   height: 31rem;
-  width: calc(32% - 1rem);
+  width: calc(30% - 1rem);
   background-color: var(--color-sand);
   color: var(--color-white);
   font-family: var(--font-audiowide);
