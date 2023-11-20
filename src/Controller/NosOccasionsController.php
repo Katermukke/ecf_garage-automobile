@@ -2,17 +2,20 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\HorairesRepository;
 use Symfony\Component\HttpFoundation\Response;
+use App\Repository\VoituresOccasionsRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class NosOccasionsController extends AbstractController
 {
     #[Route('/nosOccasions', name: 'nosOccasions')]
-    public function index(): Response
+    public function index(VoituresOccasionsRepository $voituresOccasionsRepository, HorairesRepository $horairesRepository): Response
     {
         return $this->render('nosOccasions.html.twig', [
-            'controller_name' => 'NosOccasionsController',
+            'voituresOccasions' => $voituresOccasionsRepository->findBy([]),
+            'horaires' => $horairesRepository->findBy([])
         ]);
     }
 }

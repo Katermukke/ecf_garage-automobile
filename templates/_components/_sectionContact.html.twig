@@ -16,27 +16,30 @@
 	<a href="">vincent.parrot@gmail.com</a>
 </div>
 
-{# {{ path('route_pour_traiter_le_formulaire') }} #}
-<form action="" method="post">
-	<div class="formGroup">
-		<input type="text" id="nom" placeholder="Nom" name="nom" required class="form-control">
-	</div>
+{{ form_start(contactForm, {'attr': {'class': 'contact-form'}}) }}
 
-	<div class="formGroup">
-		<input type="text" id="prenom" placeholder="Prénom" name="prenom" required class="form-control">
-	</div>
+<div class="formGroup">
+	{{ form_widget(contactForm.nom) }}
+</div>
 
-	<div class="formGroup">
-		<input type="email" id="email" placeholder="Adresse mail" name="email" required class="form-control">
-	</div>
+<div class="formGroup">
+	{{ form_widget(contactForm.prenom) }}
+</div>
 
-	<div class="formGroup">
-		<input type="tel" id="telephone" placeholder="Téléphone" name="telephone" class="form-control">
-	</div>
+<div class="formGroup">
+	{{ form_widget(contactForm.email) }}
+</div>
 
-	<div class="formGroup">
-		<textarea id="message" name="message" placeholder="Votre message ici" required class="form-control"></textarea>
-	</div>
+<div class="formGroup">
+	{{ form_widget(contactForm.telephone) }}
+</div>
 
-	<button type="submit" class="button">Envoyer</button>
-</form>
+<div class="formGroup">
+	{{ form_widget(contactForm.message) }}
+</div>
+
+<div class="formGroup">
+	{{ form_widget(contactForm.envoyer, {'attr': {'class': 'button'}}) }}
+</div>
+
+{{ form_end(contactForm) }}

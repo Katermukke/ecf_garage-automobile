@@ -4,38 +4,35 @@
 
 	<!-- BODY -->
 	<body>
-
 		<!-- NAVBAR -->
-		<nav class="navbar navbar-expand-lg">
+		<nav class="navbar navbar-expand-lg reveal fade-top">
 			{% include "_components/_navbar.html.twig" %}
 		</nav>
-
 		<!-- MAIN -->
 		<main>
-
 			<!-- HEADER -->
-			<header>
+			<header class="reveal fade-left">
 				{% include "_components/_header.html.twig" %}
 			</header>
 
 			<!-- SECTION -->
-			<section class="categorie">
+			<section class="categorie reveal">
 				{% include "_components/_sectionCategorie.html.twig" %}
 			</section>
 
 			<!-- SECTION -->
-			<section id="services" class="services">
+			<section id="services" class="services reveal">
 				{% include "_components/_sectionServices.html.twig" %}
 			</section>
 
 			<!-- SECTION -->
-			<section class="avis">
-				{% include "_components/_sectionAvis.html.twig" %}
+			<section class="avis reveal">
+				{% include "_components/_sectionAvis.html.twig" with {'form': form} %}
 			</section>
 		</main>
 
 		<!-- FOOTER -->
-		<footer>
+		<footer class="reveal">
 			{% include "_components/_footer.html.twig" %}
 		</footer>
 	</body>

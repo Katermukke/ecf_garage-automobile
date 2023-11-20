@@ -1,16 +1,16 @@
-<div class="newsletter">
-	<h3>Join the family</h3>
-	<p>Restez au courant des dernières nouveautés en matière de produits et des histoires inspirantes.</p>
-	<div class="input">
-		<input type="email" name="email" placeholder="Entrez votre adresse e-mail">
-		<button>Subscribe</button>
+<div class="newsletter reveal fade-left">
+	<h3 class="reveal fade-left">Join the family</h3>
+	<p class="reveal fade-left">Restez au courant des dernières nouveautés en matière de produits et des histoires inspirantes.</p>
+	<div class="input reveal fade-left">
+		<input class="reveal fade-left" type="email" name="email" placeholder="Entrez votre adresse e-mail">
+		<button class="reveal fade-left">Subscribe</button>
 	</div>
 </div>
 
 <div class="footer">
 	<div class="wrapperBloc">
 
-		<div class="miniWrapper">
+		<div class="miniWrapper reveal fade-bottomOne">
 			<h4>Information<span class="point">.</span>
 			</h4>
 			<div class="direction">
@@ -21,7 +21,7 @@
 				<a href="">Condition general de vente</a>
 			</div>
 		</div>
-		<div class="miniWrapper">
+		<div class="miniWrapper reveal fade-bottomTwo">
 			<h4>Aller à<span class="point">.</span>
 			</h4>
 			<div class="direction">
@@ -32,25 +32,28 @@
 			</div>
 		</div>
 
-		<div class="miniWrapper">
+		<div class="miniWrapper reveal fade-bottomThree">
 			<h4>Espace Contact<span class="point">.</span>
 			</h4>
 			<div class="direction">
 				<a href="">Contact</a>
 			</div>
 		</div>
-		<div class="miniWrapper">
+		<div class="miniWrapper reveal fade-bottomFour">
 			<h4>Horaire d'ouverture<span class="point">.</span>
 			</h4>
-			<div class="direction">
-				<p>Lun : 08:45 - 12:00, 14:00 - 18:00</p>
-				<p>Mar : 08:45 - 12:00, 14:00 - 18:00</p>
-				<p>Mer : 08:45 - 12:00, 14:00 - 18:00</p>
-				<p>Jeu : 08:45 - 12:00, 14:00 - 18:00</p>
-				<p>Ven : 08:45 - 12:00, 14:00 - 18:00</p>
-				<p>Sam : 08:45 - 12:00</p>
-				<p>Dim : Fermé</p>
-			</div>
+			{% for horaire in horaires %}
+				<div class="direction">
+					<p>{{horaire.Jours}}
+						:
+						{{horaire.horairesOuverturesMatin|date('H:i')}}
+						-
+						{{horaire.horairesOuverturesSoir|date('H:i')}},
+						{{horaire.horairesOuverturesSoir|date('H:i')}}
+						-
+						{{horaire.horairesFermeturesSoir|date('H:i')}}</p>
+				</div>
+			{% endfor %}
 		</div>
 	</div>
 
@@ -74,6 +77,5 @@
 		</div>
 
 		<a href="">Made by Arthur CLERC</a>
-
 	</div>
 </div>
