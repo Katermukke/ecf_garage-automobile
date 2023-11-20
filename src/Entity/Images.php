@@ -16,14 +16,11 @@ class Images
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 50, nullable: true)]
-    private ?string $nom = null;
-
-    #[Vich\UploadableField(mapping: 'VoituresOccasions', fileNameProperty: 'nom', size: 'size')]
+    #[Vich\UploadableField(mapping: 'VoituresOccasionsImages', fileNameProperty: 'nom', size: 'size')]
     private ?File $file = null;
 
-    #[ORM\ManyToOne(inversedBy: 'voituresOcassionsImages')]
-    private ?VoituresOccasions $voituresOccasions = null;
+    #[ORM\Column(length: 50, nullable: false,)]
+    private ?string $nom;
 
     #[ORM\Column(nullable: true)]
     private ?int $size = null;
@@ -31,14 +28,12 @@ class Images
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'voituresOcassionsImages')]
+    private ?VoituresOccasions $voituresOccasions = null;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getFile(): ?File
-    {
-        return $this->file;
     }
 
     public function setFile(?File $file): self
@@ -50,6 +45,28 @@ class Images
         }
 
         return $this;
+    }
+
+    public function getFile(): ?File
+    {
+        return $this->file;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(?string $nom): static
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->nom ?? '';
     }
 
     public function getSize(): ?int
@@ -86,22 +103,5 @@ class Images
         $this->voituresOccasions = $voituresOccasions;
 
         return $this;
-    }
-
-    public function getNom(): ?string
-    {
-        return $this->nom;
-    }
-
-    public function setNom(?string $nom): static
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    public function __toString(): string
-    {
-        return $this->nom;
     }
 }

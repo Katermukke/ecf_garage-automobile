@@ -29,11 +29,17 @@ class Avis
     #[ORM\Column]
     private ?int $note = null;
 
-    #[ORM\Column]
-    private ?bool $valide = null;
+    #[ORM\Column(options: ["default" => false])]
+    private ?bool $valide;
 
     #[ORM\ManyToOne(inversedBy: 'userAvis')]
     private ?User $userAvis = null;
+
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+        $this->valide = false;
+    }
 
     public function getId(): ?int
     {
