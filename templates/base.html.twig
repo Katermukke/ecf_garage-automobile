@@ -4,7 +4,13 @@
 
 	<!-- BODY -->
 	<body>
-		<!-- NAVBAR -->
+		<!-- SUCCES MESSAGE FORM -->
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+			<!-- NAVBAR -->
+		{% endfor %}
 		<nav class="navbar navbar-expand-lg reveal fade-top">
 			{% include "_components/_navbar.html.twig" %}
 		</nav>
@@ -16,17 +22,17 @@
 			</header>
 
 			<!-- SECTION -->
-			<section class="categorie reveal">
+			<section class="categorie">
 				{% include "_components/_sectionCategorie.html.twig" %}
 			</section>
 
 			<!-- SECTION -->
-			<section id="services" class="services reveal">
+			<section id="services" class="services">
 				{% include "_components/_sectionServices.html.twig" %}
 			</section>
 
 			<!-- SECTION -->
-			<section class="avis reveal">
+			<section class="avis">
 				{% include "_components/_sectionAvis.html.twig" with {'form': form} %}
 			</section>
 		</main>

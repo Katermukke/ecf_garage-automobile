@@ -1,7 +1,11 @@
 {% for voitureOccasion in voituresOccasions %}
-	<div
-		class="cardOccasions">
-		{# <div class="img">{{voiture.voituresOcassions}}</div> #}
+	<div class="cardOccasions reveal fade-bottom">
+		{% if voitureOccasion.voituresOcassionsImages|length > 0 %}
+			{% set image = voitureOccasion.voituresOcassionsImages.first %}
+			<img class="img" src="{{ asset('images/products/' ~ image.nom) }}" alt="Image de {{ voitureOccasion.voituresOcassionsMarques.nomMarques }} {{ voitureOccasion.voituresOcassionsMarques.modeles }}"/>
+		{% else %}
+			<img class="img" src="{{ asset('images/default.jpg') }}" alt="Image par défaut"/>
+		{% endif %}
 		<div class="description">
 			<h4 class="titleDescription">
 				{{voitureOccasion.voituresOcassionsMarques.nomMarques}}

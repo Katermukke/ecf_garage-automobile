@@ -8,16 +8,16 @@
 <div class="wrapperAvis">
 	{% for avi in avis %}
 
-		{% set offset = 1 %}
+		{% set offset = 4 %}
 		{% set animationClasses = ['fade-bottomOne', 'fade-bottomTwo', 'fade-bottomThree', 'fade-bottomFour'] %}
 		{% set animationClass = cycle(animationClasses, avi.id - offset) %}
 
 		{% set imagePath = '' %}
-		{% if avi.id == 7 %}
+		{% if avi.id == 4 %}
 			{% set imagePath = 'css/assets/homme1.jpeg' %}
-		{% elseif avi.id == 8 %}
+		{% elseif avi.id == 5 %}
 			{% set imagePath = 'css/assets/femme.jpeg' %}
-		{% elseif avi.id == 9 %}
+		{% elseif avi.id == 6 %}
 			{% set imagePath = 'css/assets/homme2.jpeg' %}
 		{% endif %}
 
@@ -38,28 +38,6 @@
 		</div>
 	{% endfor %}
 </div>
-
-{# <div class="readAvis reveal fade-bottom">
-	<h4 class="titleReadAvis">
-		Déposer le votre ici<span class="point">.</span>
-	</h4>
-
-	<div class="star-rating">
-		<input id="star5" name="rating" type="radio" value="5" class="rating">
-		<label for="star5"></label>
-		<input id="star4" name="rating" type="radio" value="4" class="rating">
-		<label for="star4"></label>
-		<input id="star3" name="rating" type="radio" value="3" class="rating">
-		<label for="star3"></label>
-		<input id="star2" name="rating" type="radio" value="2" class="rating">
-		<label for="star2"></label>
-		<input id="star1" name="rating" type="radio" value="1" class="rating">
-		<label for="star1"></label>
-	</div>
-
-	<textarea id="avis" name="avis" rows="5" cols="33">L’endroit parfait pour, raparer, entretenir ou acheter son occasion..*
-	</textarea>
-</div> #}
 
 <div class="readAvis reveal fade-bottom">
 	<h4 class="titleReadAvis">

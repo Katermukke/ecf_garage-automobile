@@ -178,6 +178,9 @@ table {
 body {
   font-family: var(--font-audiowide);
 }
+body .alert-success {
+  margin: 0;
+}
 body .navbar {
   display: flex;
   justify-content: center;
@@ -516,7 +519,6 @@ body main .services .wrapperServicesTop .splitServices .servicesTwo .huile {
 }
 body main .services .wrapperServicesTop .splitServices .servicesTwo .information {
   padding: 2rem 0 0 2rem;
-  height: 30rem;
 }
 @media (max-width: 768px) {
   body main .services .wrapperServicesTop .splitServices .servicesTwo .information {
