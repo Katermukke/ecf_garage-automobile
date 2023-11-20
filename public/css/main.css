@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -758,8 +757,10 @@ body main .avis .headAvis p {
 }
 body main .avis .wrapperAvis {
   display: flex;
+  flex-wrap: wrap;
   -moz-column-gap: 4rem;
        column-gap: 4rem;
+  padding: 0 0 0 1.5rem;
   margin: 0 4rem 5rem 4rem;
 }
 @media (max-width: 1024px) {
@@ -782,11 +783,12 @@ body main .avis .wrapperAvis .cardAvis {
   flex-direction: column;
   text-align: center;
   height: 31rem;
-  width: 33.3333333333%;
+  width: calc(32% - 1rem);
   background-color: var(--color-sand);
   color: var(--color-white);
   font-family: var(--font-audiowide);
   padding: 1rem 1.5rem 1rem 1.5rem;
+  margin-bottom: 2rem;
   overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -843,34 +845,43 @@ body main .avis .readAvis .titleReadAvis {
 body main .avis .readAvis .titleReadAvis .point {
   color: var(--color-orange);
 }
-body main .avis .readAvis .star-rating {
+body main .avis .readAvis .form-avis {
   display: flex;
-  flex-direction: row-reverse;
-  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
 }
-body main .avis .readAvis .star-rating .rating {
+body main .avis .readAvis .form-avis div {
+  width: 100%;
+}
+body main .avis .readAvis .form-avis div .input-avis {
+  display: flex;
+  padding-left: 2rem;
+  height: 3rem;
+  width: 100%;
+  border-radius: 4rem;
+  border: 0.1rem solid #fff;
+  background-color: var(--color-sand);
+  font-family: var(--font-audiowide);
+  color: var(--color-beige);
+  margin-bottom: 1rem;
+}
+body main .avis .readAvis .form-avis div .input-avis::-moz-placeholder {
+  color: var(--color-beige);
+}
+body main .avis .readAvis .form-avis div .input-avis::placeholder {
+  color: var(--color-beige);
+}
+body main .avis .readAvis .form-avis #avis_valide {
   display: none;
 }
-body main .avis .readAvis .star-rating label {
-  font-size: 1.9rem;
-  color: var(--color-beige);
-  cursor: pointer;
+body main .avis .readAvis .form-avis #avis_note {
+  display: none;
 }
-body main .avis .readAvis .star-rating label:before {
-  content: "★";
-}
-body main .avis .readAvis .star-rating .rating:checked ~ label {
-  color: var(--color-orange);
-}
-body main .avis .readAvis .star-rating label:hover,
-body main .avis .readAvis .star-rating label:hover ~ label {
-  color: var(--color-orange);
-  transition: ease 0.3s;
-}
-body main .avis .readAvis textarea {
+body main .avis .readAvis .form-avis textarea {
   height: 12rem;
-  width: 75%;
-  margin-bottom: 4rem;
+  width: 100%;
   border-radius: 1.8rem;
   color: var(--color-beige);
   background-color: var(--color-sand);
@@ -880,14 +891,31 @@ body main .avis .readAvis textarea {
   padding-left: 2rem;
   vertical-align: top;
   font-family: var(--font-audiowide);
+  margin-bottom: 1rem;
+}
+body main .avis .readAvis .form-avis textarea::-moz-placeholder {
+  color: var(--color-beige);
+}
+body main .avis .readAvis .form-avis textarea::placeholder {
+  color: var(--color-beige);
 }
 @media (max-width: 768px) {
-  body main .avis .readAvis textarea {
+  body main .avis .readAvis .form-avis textarea {
     font-size: 0.7rem;
   }
 }
-body main .avis .readAvis textarea .point {
+body main .avis .readAvis .form-avis textarea .point {
   color: var(--color-orange);
+}
+body main .avis .readAvis .form-avis button {
+  height: 4.5rem;
+  width: 12rem;
+  border-radius: 2rem;
+  border: 0.1rem solid var(--color-white);
+  background-color: var(--color-sand);
+  color: var(--color-beige);
+  font-family: var(--font-audiowide);
+  margin-bottom: 1rem;
 }
 body footer .newsletter {
   height: 28rem;

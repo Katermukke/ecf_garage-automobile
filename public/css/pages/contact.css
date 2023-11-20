@@ -176,6 +176,7 @@ table {
 
 body {
   font-family: var(--font-audiowide);
+  background-color: var(--background-color-sand);
 }
 body .navbar {
   display: flex;
@@ -285,7 +286,7 @@ body .navbar .contain .navbar-collapse .seConnecter .btn a {
   font-size: 0.75rem;
 }
 body main .contact {
-  height: 50rem;
+  height: auto;
   display: flex;
   justify-content: space-between;
   background-color: var(--color-sand);
@@ -397,6 +398,7 @@ body main .contact form .formGroup input {
   border: 1px solid #fff;
   background-color: var(--color-sand);
   color: var(--color-beige);
+  margin-bottom: 1rem;
 }
 body main .contact form .formGroup textarea {
   padding: 1.8rem 0 0 2rem;
@@ -404,6 +406,7 @@ body main .contact form .formGroup textarea {
   border-radius: 4rem;
   border: 1px solid #fff;
   background-color: var(--color-sand);
+  margin-bottom: 1rem;
 }
 body main .contact form .formGroup input::-moz-placeholder {
   color: var(--color-beige);
@@ -425,6 +428,7 @@ body main .contact form button {
   background-color: var(--color-sand);
   color: var(--color-beige);
   font-family: var(--font-audiowide);
+  margin-bottom: 1rem;
 }
 body footer .newsletter {
   height: 28rem;

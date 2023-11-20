@@ -26,9 +26,6 @@ class Avis
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\Column]
-    private ?int $note = null;
-
     #[ORM\Column(options: ["default" => false])]
     private ?bool $valide;
 
@@ -90,18 +87,6 @@ class Avis
     public function setDate(\DateTimeInterface $date): static
     {
         $this->date = $date;
-
-        return $this;
-    }
-
-    public function getNote(): ?int
-    {
-        return $this->note;
-    }
-
-    public function setNote(int $note): static
-    {
-        $this->note = $note;
 
         return $this;
     }

@@ -28,10 +28,6 @@ class AvisType extends AbstractType
                 'attr' => ['class' => 'form-control', 'placeholder' => 'Votre commentaire'],
                 'required' => true,
             ])
-            ->add('note', IntegerType::class, [
-                'attr' => ['class' => 'form-control'],
-                'required' => true,
-            ])
             ->add('valide', CheckboxType::class, [
                 'attr' => ['class' => 'form-check'],
                 'required' => false,

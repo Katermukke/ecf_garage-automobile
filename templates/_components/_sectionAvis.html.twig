@@ -8,16 +8,16 @@
 <div class="wrapperAvis">
 	{% for avi in avis %}
 
-		{% set offset = 4 %}
+		{% set offset = 1 %}
 		{% set animationClasses = ['fade-bottomOne', 'fade-bottomTwo', 'fade-bottomThree', 'fade-bottomFour'] %}
 		{% set animationClass = cycle(animationClasses, avi.id - offset) %}
 
 		{% set imagePath = '' %}
-		{% if avi.id == 4 %}
+		{% if avi.id == 1 %}
 			{% set imagePath = 'css/assets/homme1.jpeg' %}
-		{% elseif avi.id == 5 %}
+		{% elseif avi.id == 2 %}
 			{% set imagePath = 'css/assets/femme.jpeg' %}
-		{% elseif avi.id == 6 %}
+		{% elseif avi.id == 3 %}
 			{% set imagePath = 'css/assets/homme2.jpeg' %}
 		{% endif %}
 
@@ -46,13 +46,11 @@
 
 	{{ form_start(form, {'attr': {'class': 'form-avis'}}) }}
 
-	{# Champs du formulaire #}
-	{{ form_row(form.nom, {'attr': {'class': 'input-avis', 'placeholder': 'Nom'}}) }}
-	{{ form_row(form.prenom, {'attr': {'class': 'input-avis', 'placeholder': 'Prénom'}}) }}
-	{{ form_row(form.commentaire, {'attr': {'class': 'input-avis', 'placeholder': 'L’endroit parfait pour, raparer, entretenir ou acheter son occasion..*'}}) }}
-	{{ form_row(form.note, {'attr': {'class': 'rating'}}) }}
+	{{ form_row(form.nom, {'label': false, 'attr': { 'class': 'input-avis', 'placeholder': 'Nom'}}) }}
+	{{ form_row(form.prenom, {'label': false, 'attr': {'class': 'input-avis', 'placeholder': 'Prénom'}}) }}
+	{{ form_row(form.commentaire, {'label': false, 'attr': {'class': 'input-message', 'placeholder': 'L’endroit parfait pour, raparer, entretenir ou acheter son occasion..*'}}) }}
+	{{ form_row(form.valide, {'label': false}) }}
 
-	{# Bouton de soumission #}
 	<div class="form-group">
 		<button type="submit" class="btn-avis">Soumettre</button>
 	</div>

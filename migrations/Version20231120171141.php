@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20231120141804 extends AbstractMigration
+final class Version20231120171141 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -21,7 +21,7 @@ final class Version20231120141804 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE annonces (id INT AUTO_INCREMENT NOT NULL, annonces_voitures_occasions_id INT NOT NULL, user_annonces_id INT DEFAULT NULL, titre VARCHAR(100) NOT NULL, date_de_publication VARCHAR(8) NOT NULL, UNIQUE INDEX UNIQ_CB988C6FFDED3A26 (annonces_voitures_occasions_id), INDEX IDX_CB988C6FE5334C42 (user_annonces_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE avis (id INT AUTO_INCREMENT NOT NULL, user_avis_id INT DEFAULT NULL, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, commentaire VARCHAR(2000) NOT NULL, date DATE NOT NULL, note INT NOT NULL, valide TINYINT(1) DEFAULT 0 NOT NULL, INDEX IDX_8F91ABF041736E95 (user_avis_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE avis (id INT AUTO_INCREMENT NOT NULL, user_avis_id INT DEFAULT NULL, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, commentaire VARCHAR(2000) NOT NULL, date DATE NOT NULL, valide TINYINT(1) DEFAULT 0 NOT NULL, INDEX IDX_8F91ABF041736E95 (user_avis_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE formulaire_de_renseignement (id INT AUTO_INCREMENT NOT NULL, user_formulaire_id INT DEFAULT NULL, nom VARCHAR(50) NOT NULL, prenom VARCHAR(50) NOT NULL, telephone VARCHAR(10) NOT NULL, email VARCHAR(180) NOT NULL, sujet VARCHAR(255) NOT NULL, message LONGTEXT NOT NULL, valide VARCHAR(255) NOT NULL, INDEX IDX_8AF6D566BEDDFBCB (user_formulaire_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE horaires (id INT AUTO_INCREMENT NOT NULL, user_horaires_id INT DEFAULT NULL, jours VARCHAR(10) NOT NULL, horaires_ouvertures_matin TIME DEFAULT NULL, horaires_fermetures_matin TIME DEFAULT NULL, horaires_ouvertures_soir TIME DEFAULT NULL, horaires_fermetures_soir TIME DEFAULT NULL, INDEX IDX_39B7118F23EF551E (user_horaires_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE images (id INT AUTO_INCREMENT NOT NULL, voitures_occasions_id INT DEFAULT NULL, nom VARCHAR(255) DEFAULT NULL, size INT DEFAULT NULL, updated_at DATETIME DEFAULT NULL COMMENT \'(DC2Type:datetime_immutable)\', INDEX IDX_E01FBE6A5B12944E (voitures_occasions_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');

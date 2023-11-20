@@ -1,5 +1,5 @@
 .contact {
-  height: 50rem;
+  height: auto;
   display: flex;
   justify-content: space-between;
   background-color: var(--color-sand);
@@ -108,6 +108,7 @@
         border: 1px solid #fff;
         background-color: var(--color-sand);
         color: var(--color-beige);
+        margin-bottom: 1rem;
       }
 
       textarea {
@@ -116,6 +117,7 @@
         border-radius: 4rem;
         border: 1px solid #fff;
         background-color: var(--color-sand);
+        margin-bottom: 1rem;
       }
 
       input::placeholder {
