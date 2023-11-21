@@ -12,7 +12,7 @@ class ImagesFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
-        $fichiers = ['citroenDSGrise.png', '2cvRouge.jpeg'];
+        $fichiers = ['citroenDSGrise.png'];
 
         foreach ($fichiers as $fichier) {
             $image = new Images();
