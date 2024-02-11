@@ -21,10 +21,10 @@ class UsersFixtures extends Fixture
         $admin = new User();
         $admin->setNom('Parrot');
         $admin->setPrenom('Vincent');
-        $admin->setEmail('');
-        $admin->setRoles(['']);
+        $admin->setEmail('parrot.vincent@gmail.com');
+        $admin->setRoles(['ROLE_ADMINISTRATEUR']);
         $admin->setPassword(
-            $this->passwordHasher->hashPassword($admin, '')
+            $this->passwordHasher->hashPassword($admin, 'admin')
         );
 
         $manager->persist($admin);
@@ -32,10 +32,10 @@ class UsersFixtures extends Fixture
         $employe = new User();
         $employe->setNom('Alderson');
         $employe->setPrenom('Eliot');
-        $employe->setEmail('');
-        $employe->setRoles(['']);
+        $employe->setEmail('alderson.eliot@gmail.com');
+        $employe->setRoles(['ROLE_EMPLOYE']);
         $employe->setPassword(
-            $this->passwordHasher->hashPassword($employe, '')
+            $this->passwordHasher->hashPassword($employe, 'employe')
         );
 
         $manager->persist($employe);

@@ -1,5 +1,5 @@
 {% for voitureOccasion in voituresOccasions %}
-	<div class="cardOccasions reveal fade-bottom">
+	<div class="cardOccasions">
 		{% if voitureOccasion.voituresOcassionsImages|length > 0 %}
 			{% set image = voitureOccasion.voituresOcassionsImages.first %}
 			<img class="img" src="{{ asset('images/products/' ~ image.nom) }}" alt="Image de {{ voitureOccasion.voituresOcassionsMarques.nomMarques }} {{ voitureOccasion.voituresOcassionsMarques.modeles }}"/>

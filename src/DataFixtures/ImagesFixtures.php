@@ -13,20 +13,23 @@ class ImagesFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager): void
     {
         $fichiers = ['citroenDSGrise.png'];
+        $nombreDeVoitures = 10;
 
-        foreach ($fichiers as $fichier) {
-            $image = new Images();
-
-            $file = new File(__DIR__ . '/../../public/css/assets/' . $fichier);
-            $image->setFile($file);
-            $image->setNom($fichier);
-            $voiture = $this->getReference('voiture');
-            $image->setVoituresOccasions($voiture);
-
-            $manager->persist($image);
+        for ($i = 0; $i < $nombreDeVoitures; $i++) {
+            foreach ($fichiers as $fichier) {
+                $image = new Images();
+                $file = new File(__DIR__ . '/../../public/css/assets/' . $fichier);
+                $image->setFile($file);
+                $image->setNom($fichier);
+                $voitureReference = 'voiture-' . $i;
+                if ($this->hasReference($voitureReference)) {
+                    $voiture = $this->getReference($voitureReference);
+                    $image->setVoituresOccasions($voiture);
+                    $manager->persist($image);
+                }
+            }
+            $manager->flush();
         }
-
-        $manager->flush();
     }
 
     public function getDependencies()

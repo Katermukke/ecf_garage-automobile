@@ -22,24 +22,33 @@ class VoituresOccasionsFixtures extends Fixture implements DependentFixtureInter
                 'nomMarque' => 'Citroën',
                 'nomModele' => '2 cv (2eme Generation) 0.6 29 special'
             ],
+            [
+                'prix' => 10000,
+                'annee' => new \DateTime('2010-01-01'),
+                'kilometrage' => 50000,
+                'carburant' => 'Essence',
+                'boiteDeVitesse' => 'Manuelle',
+                'nomMarque' => 'Datsun',
+                'nomModele' => '260Z 2+2',
+            ],
         ];
 
-        foreach ($voituresData as $data) {
+        // foreach ($voituresData as $data)
+        foreach ($voituresData as $index => $data) {
             $voiture = new VoituresOccasions();
             $voiture->setPrix($data['prix']);
             $voiture->setAnnee($data['annee']);
             $voiture->setKilometrage($data['kilometrage']);
             $voiture->setCarburant($data['carburant']);
             $voiture->setBoiteDeVitesse($data['boiteDeVitesse']);
-
-
             $marque = $manager->getRepository(Marques::class)->findOneBy(['nomMarques' => $data['nomMarque']]);
             if ($marque) {
                 $voiture->setVoituresOcassionsMarques($marque);
             }
 
             $manager->persist($voiture);
-            $this->addReference('voiture', $voiture);
+            // $this->addReference('voiture', $voiture);
+            $this->addReference('voiture-' . $index, $voiture);
         }
 
         $manager->flush();

@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   .headOccasions {
-    margin: 5rem 0 5rem 0;
+    margin: 5rem 0 3rem 0;
     .titleOccasions {
       text-align: center;
       font-family: var(--font-bethellen);
@@ -16,6 +16,31 @@
     p {
       text-align: center;
       padding: 0 3.5rem 0 3.5rem;
+    }
+  }
+
+  .selectFilter {
+    font-family: var(--font-bethellen);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 0 4rem 0;
+
+    .filter {
+      h4 {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+      }
+
+      #selectFilter {
+        font-family: var(--font-audiowide);
+        font-size: 0.7rem;
+        background-color: var(--color-sand);
+        padding: 0.5rem;
+        border: none;
+        color: var(--color-white);
+      }
     }
   }
 
