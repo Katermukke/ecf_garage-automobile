@@ -31,6 +31,60 @@ class VoituresOccasionsFixtures extends Fixture implements DependentFixtureInter
                 'nomMarque' => 'Datsun',
                 'nomModele' => '260Z 2+2',
             ],
+            [
+                'prix' => 10000,
+                'annee' => new \DateTime('2010-01-01'),
+                'kilometrage' => 50000,
+                'carburant' => 'Essence',
+                'boiteDeVitesse' => 'Manuelle',
+                'nomMarque' => 'Datsun',
+                'nomModele' => '260Z 2+2',
+            ],
+            [
+                'prix' => 10000,
+                'annee' => new \DateTime('2010-01-01'),
+                'kilometrage' => 50000,
+                'carburant' => 'Essence',
+                'boiteDeVitesse' => 'Manuelle',
+                'nomMarque' => 'Datsun',
+                'nomModele' => '260Z 2+2',
+            ],
+            [
+                'prix' => 10000,
+                'annee' => new \DateTime('2010-01-01'),
+                'kilometrage' => 50000,
+                'carburant' => 'Essence',
+                'boiteDeVitesse' => 'Manuelle',
+                'nomMarque' => 'Datsun',
+                'nomModele' => '260Z 2+2',
+            ],
+            [
+                'prix' => 10000,
+                'annee' => new \DateTime('2010-01-01'),
+                'kilometrage' => 50000,
+                'carburant' => 'Essence',
+                'boiteDeVitesse' => 'Manuelle',
+                'nomMarque' => 'Datsun',
+                'nomModele' => '260Z 2+2',
+            ],
+            [
+                'prix' => 10000,
+                'annee' => new \DateTime('2010-01-01'),
+                'kilometrage' => 50000,
+                'carburant' => 'Essence',
+                'boiteDeVitesse' => 'Manuelle',
+                'nomMarque' => 'Datsun',
+                'nomModele' => '260Z 2+2',
+            ],
+            [
+                'prix' => 10000,
+                'annee' => new \DateTime('2010-01-01'),
+                'kilometrage' => 50000,
+                'carburant' => 'Essence',
+                'boiteDeVitesse' => 'Manuelle',
+                'nomMarque' => 'Datsun',
+                'nomModele' => '260Z 2+2',
+            ]
         ];
 
         // foreach ($voituresData as $data)
@@ -45,9 +99,7 @@ class VoituresOccasionsFixtures extends Fixture implements DependentFixtureInter
             if ($marque) {
                 $voiture->setVoituresOcassionsMarques($marque);
             }
-
             $manager->persist($voiture);
-            // $this->addReference('voiture', $voiture);
             $this->addReference('voiture-' . $index, $voiture);
         }
 

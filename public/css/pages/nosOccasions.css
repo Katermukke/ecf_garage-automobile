@@ -297,15 +297,17 @@ body main .voitureOccasions .headOccasions .titleOccasions {
   text-align: center;
   font-family: var(--font-bethellen);
   margin-bottom: 3rem;
+  font-size: 1.8rem;
 }
 body main .voitureOccasions .headOccasions .titleOccasions span {
   color: var(--color-orange);
 }
 body main .voitureOccasions .headOccasions p {
   text-align: center;
+  font-size: 0.8rem;
   padding: 0 3.5rem 0 3.5rem;
 }
-body main .voitureOccasions .selectFilter {
+body main .voitureOccasions #selectFilter {
   font-family: var(--font-bethellen);
   display: flex;
   justify-content: space-between;
@@ -313,11 +315,11 @@ body main .voitureOccasions .selectFilter {
   width: 80%;
   margin: 0 0 4rem 0;
 }
-body main .voitureOccasions .selectFilter .filter h4 {
+body main .voitureOccasions #selectFilter .filter h4 {
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
-body main .voitureOccasions .selectFilter .filter #selectFilter {
+body main .voitureOccasions #selectFilter .filter select {
   font-family: var(--font-audiowide);
   font-size: 0.7rem;
   background-color: var(--color-sand);
