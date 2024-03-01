@@ -21,6 +21,8 @@ class VoituresOccasionsRepository extends ServiceEntityRepository
         parent::__construct($registry, VoituresOccasions::class);
     }
 
+    
+
     //    /**
     //     * @return VoituresOccasions[] Returns an array of VoituresOccasions objects
     //     */
