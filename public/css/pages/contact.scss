@@ -1,18 +1,1 @@
-@import "../base/reset";
-@import "../base/typography";
-@import "../utils/breakpoint";
-@import "../utils/mixins";
-@import "../utils/variables";
-
-body {
-  font-family: var(--font-audiowide);
-  background-color: var(--background-color-sand);
-  @import "../layout/navbar";
-  main {
-    @import "../layout/sectionContact";
-  }
-  footer {
-    @import "../layout/footer";
-  }
-  @import "../layout/keyframe";
-}
+@import "../layout/sectionContact";

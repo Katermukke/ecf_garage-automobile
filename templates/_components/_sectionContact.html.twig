@@ -1,49 +1,51 @@
-<div class="letsDoThis reveal fade-bottom">
-	<h2>Let's do this
-		<span class="point">!</span>
-	</h2>
-	<p class="largeParagraph">Vous souhaitez acheter, travailler avec nous ou simplement en savoir plus sur le Garage V.Parrot ? Vous êtes au bon endroit.</p>
-	<div class="splitParagraph">
-		<div class="paragraph">
-			<h6>CYPRUS</h6>
-			<p>Three Mountains Cocoa LTD 8st. Pygmalionos, Alasia Building, Flat/Office 402 2406, Nicosia</p>
+<section class="contact">
+	<div class="letsDoThis reveal fade-bottom">
+		<h2>Let's do this
+			<span class="point">!</span>
+		</h2>
+		<p class="largeParagraph">Vous souhaitez acheter, travailler avec nous ou simplement en savoir plus sur le Garage V.Parrot ? Vous êtes au bon endroit.</p>
+		<div class="splitParagraph">
+			<div class="paragraph">
+				<h6>CYPRUS</h6>
+				<p>Three Mountains Cocoa LTD 8st. Pygmalionos, Alasia Building, Flat/Office 402 2406, Nicosia</p>
+			</div>
+			<div class="paragraph">
+				<h6>FR</h6>
+				<p>Garage V. Parrot - 13 Rue de l'Abbé Féraud, 13006 Marseille</p>
+			</div>
 		</div>
-		<div class="paragraph">
-			<h6>FR</h6>
-			<p>Garage V. Parrot - 13 Rue de l'Abbé Féraud, 13006 Marseille</p>
-		</div>
+		<a href="">vincent.parrot@gmail.com</a>
 	</div>
-	<a href="">vincent.parrot@gmail.com</a>
-</div>
 
-{{ form_start(contactForm, {'attr': {'class': 'contact-form reveal fade-bottomThree'}}) }}
+	{{ form_start(contactForm, {'attr': {'class': 'contact-form reveal fade-bottomThree'}}) }}
 
-<div class="formGroup">
-	{{ form_widget(contactForm.nom) }}
-</div>
+	<div class="formGroup">
+		{{ form_widget(contactForm.nom) }}
+	</div>
 
-<div class="formGroup">
-	{{ form_widget(contactForm.prenom) }}
-</div>
+	<div class="formGroup">
+		{{ form_widget(contactForm.prenom) }}
+	</div>
 
-<div class="formGroup">
-	{{ form_widget(contactForm.email) }}
-</div>
+	<div class="formGroup">
+		{{ form_widget(contactForm.email) }}
+	</div>
 
-<div class="formGroup">
-	{{ form_widget(contactForm.telephone) }}
-</div>
+	<div class="formGroup">
+		{{ form_widget(contactForm.telephone) }}
+	</div>
 
-<div class="formGroup">
-	{{ form_widget(contactForm.sujet) }}
-</div>
+	<div class="formGroup">
+		{{ form_widget(contactForm.sujet) }}
+	</div>
 
-<div class="formGroup">
-	{{ form_widget(contactForm.message) }}
-</div>
+	<div class="formGroup">
+		{{ form_widget(contactForm.message) }}
+	</div>
 
-<div class="formGroup">
-	{{ form_widget(contactForm.envoyer, {'attr': {'class': 'button'}}) }}
-</div>
+	<div class="formGroup">
+		{{ form_widget(contactForm.envoyer, {'attr': {'class': 'button'}}) }}
+	</div>
 
-{{ form_end(contactForm) }}
+	{{ form_end(contactForm) }}
+</section>

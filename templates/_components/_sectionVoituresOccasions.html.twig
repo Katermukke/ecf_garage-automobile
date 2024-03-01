@@ -1,0 +1,59 @@
+<section class="voitureOccasions reveal fade-bottom">
+	<div class="headOccasions">
+		<h2 class="titleOccasions">
+			Nos Occasions<span class="point">.</span>
+		</h2>
+		<p>Avis Vérifiés est certifiée par Garage.V Parrot pour le traitement des "avis en ligne" : "collecte, modération et restitution des avis".</p>
+	</div>
+
+	<form id="selectFilter">
+		<div class="filter">
+			<h4>Marques</h4>
+			<select name="filterBrands" id="selectFilterBrands">
+				<option value="choice">Choisissez une marque</option>
+				<option value="citroën">Citroën</option>
+				<option value="datsun">Datsun</option>
+				<option value="mercedes">Mercedes</option>
+				<option value="renault">Renault</option>
+				<option value="mg">MG</option>
+				<option value="bmw">BMW</option>
+				<option value="volkswagen">Volkswagen</option>
+				<option value="porsche">Porsche</option>
+			</select>
+		</div>
+
+		<div class="filter">
+			<h4>Prix</h4>
+			<select name="filterPrice" id="selectFilterPrice">
+				<option value="Choice">Choisissez une gamme de prix</option>
+				<option value="10000">Moins de 10 000€</option>
+				<option value="10000-20000">Entre 10 000€ et 20 000€</option>
+				<option value="20000-40000">Entre 20 000€ et 40 000€</option>
+				<option value="40000-80000">Entre 40 000€ et 80 000€</option>
+				<option value="80000">Plus de 80 000€</option>
+			</select>
+		</div>
+
+		<div class="filter">
+			<h4>Carburant</h4>
+			<select name="filterFuel" id="selectFilterFuel">
+				<option value="choice">Choisissez un carburant</option>
+				<option value="essence">Essence</option>
+				<option value="diesel">Diesel</option>
+			</select>
+		</div>
+
+		<div class="filter">
+			<h4>Kilometres</h4>
+			<select name="filterMiles" id="selectFilterMiles">
+				<option value="choice">Choisissez un kilometrages</option>
+				<option value="15000">Moins de 15 000km</option>
+				<option value="15000-30000">Entre 15 000 et 30 000km</option>
+				<option value="30000-60000">Entre 30 000 et 60 000km</option>
+				<option value="60000-120000">Entre 60 000 et 120 000km</option>
+				<option value="120000">Plus de 120 000km</option>
+			</select>
+		</div>
+	</form>
+	{% include "_components/_cardOccasions.html.twig" %}
+</section>

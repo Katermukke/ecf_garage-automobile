@@ -1,23 +1,19 @@
 @import "base/reset";
 @import "base/typography";
+
 @import "utils/breakpoint";
 @import "utils/mixins";
 @import "utils/variables";
 
-body {
-  font-family: var(--font-audiowide);
-  .alert-success {
-    margin: 0;
-  }
-  @import "layout/navbar";
-  main {
-    @import "layout/header";
-    @import "layout/sectionCategorie";
-    @import "layout/sectionServices";
-    @import "layout/sectionAvis";
-  }
-  footer {
-    @import "layout/footer";
-  }
-  @import "layout/keyframe";
-}
+@import "animation/keyframe";
+
+@import "layout/navbar";
+@import "layout/header";
+@import "layout/footer";
+
+@import "components/buttons";
+@import "components/cardOccasions";
+
+@import "pages/connexion";
+@import "pages/contact";
+@import "pages/nosOccasions";

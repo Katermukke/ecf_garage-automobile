@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html>
-	{% set page_style = 'css/pages/contact.css' %}
-	{% include 'base_head.html.twig' %}
-	<!-- BODY -->
-	<body>
+{% extends 'base.html.twig' %}
 
-		<!-- NAVBAR -->
-		<nav class="navbar navbar-expand-lg reveal fade-top">
-			{% include "_components/_navbar.html.twig" %}
-		</nav>
-
-		<!-- MAIN -->
-		<main>
-			<!-- SECTION -->
-			<section class="contact">
-				{% include "_components/_sectionContact.html.twig" %}
-			</section>
-		</main>
-		<!-- FOOTER -->
-		<footer>
-			{% include "_components/_footer.html.twig" %}
-		</footer>
-	</body>
-</html>
+{% block main %}
+	{% include "_components/_sectionContact.html.twig" %}
+{% endblock %}

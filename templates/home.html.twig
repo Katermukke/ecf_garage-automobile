@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+	<!-- HEADER -->
+	{% include "_components/_header.html.twig" %}
+	<!-- SECTION -->
+	{% include "_components/_sectionCategorie.html.twig" %}
+	<!-- SECTION -->
+	{% include "_components/_sectionServices.html.twig" %}
+	<!-- SECTION -->
+	{% include "_components/_sectionAvis.html.twig" with {'form': form} %}
+{% endblock %}
