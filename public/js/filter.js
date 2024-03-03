@@ -33,8 +33,8 @@ function filtrerEtAfficherVoitures(voitures) {
   const kilometres = document.querySelector("#selectFilterMiles").value;
 
   const voituresFiltrees = voitures.filter((voiture) => {
-    const marqueVoiture = voiture.marque.nom.toLowerCase(); // Accède à la propriété 'nom' de 'marque'
-    const carburantVoiture = voiture.carburant.toLowerCase(); // S'assure que la comparaison est insensible à la casse
+    const marqueVoiture = voiture.marque.nom.toLowerCase();
+    const carburantVoiture = voiture.carburant.toLowerCase();
     return (
       (marqueSelectionnee === "choice" ||
         marqueVoiture === marqueSelectionnee) &&
@@ -49,12 +49,18 @@ function filtrerEtAfficherVoitures(voitures) {
 
 function filtrePrix(prixVoiture, criterePrix) {
   if (criterePrix === "Choice") return true;
+  if (criterePrix === "10000") return prixVoiture < 10000;
+  if (criterePrix === "80000") return prixVoiture > 80000;
+
   const [min, max] = criterePrix.split("-").map(Number);
   return prixVoiture >= min && (!max || prixVoiture <= max);
 }
 
 function filtreKilometres(kmVoiture, critereKm) {
   if (critereKm === "choice") return true;
+  if (critereKm === "15000") return kmVoiture < 15000;
+  if (critereKm === "120000") return kmVoiture > 120000;
+
   const [min, max] = critereKm.split("-").map(Number);
   return kmVoiture >= min && (!max || kmVoiture <= max);
 }
@@ -68,7 +74,7 @@ function afficherVoituresFiltrees(voituresFiltrees) {
   voituresFiltrees.forEach((voiture) => {
     let imageURL = voiture.image
       ? `/images/products/${voiture.image}`
-      : "images/products/citroendsgrise-655b6fffe11e9217280427";
+      : "images/default-car.png"; // Utilisez un placeholder si aucune image n'est définie
     if (
       voiture.voituresOcassionsImages &&
       voiture.voituresOcassionsImages.length > 0
@@ -79,18 +85,20 @@ function afficherVoituresFiltrees(voituresFiltrees) {
     const divVoiture = document.createElement("div");
     divVoiture.className = "cardOccasions";
     divVoiture.innerHTML = `
-            <img class="img" src="${imageURL}" alt="Image de ${voiture.marque.nom} ${voiture.marque.modeles}">
-            <div class="description">
-                <h4 class="titleDescription">${voiture.marque.nom} - ${voiture.marque.modeles}</h4>
-                <p>Prix: ${voiture.prix}€</p>
-                <p>Année: ${voiture.annee}</p>
-                <p>Kilométrage: ${voiture.kilometrage}km</p>
-                <p>Carburant: ${voiture.carburant}</p>
-                <p>Boite de vitesse: ${voiture.boiteDeVitesse}</p>
+        <img class="img" src="${imageURL}" alt="Image de ${voiture.marque.nom} ${voiture.marque.modeles}">
+        <div class="description">
+            <h4 class="titleDescription">${voiture.marque.nom} - ${voiture.marque.modeles}</h4>
+            <p>Prix: ${voiture.prix}€</p>
+            <span class="payment">Paiement sécurisé</span>
+            <div class="filter">
+            <p>Année: ${voiture.annee}</p>
+            <p>Kilométrage: ${voiture.kilometrage}km</p>
+            <p>Carburant: ${voiture.carburant}</p>
+            <p>Boite de vitesse: ${voiture.boiteDeVitesse}</p>
             </div>
+        </div>
         `;
     conteneurVoitures.appendChild(divVoiture);
   });
 }
-
 console.log("im here");

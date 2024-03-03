@@ -14,7 +14,7 @@ class VoituresOccasionsFixtures extends Fixture implements DependentFixtureInter
     {
         $voituresData = [
             [
-                'prix' => 10000,
+                'prix' => 46700,
                 'annee' => new \DateTime('2010-01-01'),
                 'kilometrage' => 50000,
                 'carburant' => 'Essence',
@@ -22,69 +22,6 @@ class VoituresOccasionsFixtures extends Fixture implements DependentFixtureInter
                 'nomMarque' => 'Citroën',
                 'nomModele' => '2 cv (2eme Generation) 0.6 29 special'
             ],
-            [
-                'prix' => 10000,
-                'annee' => new \DateTime('2010-01-01'),
-                'kilometrage' => 50000,
-                'carburant' => 'Essence',
-                'boiteDeVitesse' => 'Manuelle',
-                'nomMarque' => 'Datsun',
-                'nomModele' => '260Z 2+2',
-            ],
-            [
-                'prix' => 10000,
-                'annee' => new \DateTime('2010-01-01'),
-                'kilometrage' => 50000,
-                'carburant' => 'Essence',
-                'boiteDeVitesse' => 'Manuelle',
-                'nomMarque' => 'Datsun',
-                'nomModele' => '260Z 2+2',
-            ],
-            [
-                'prix' => 10000,
-                'annee' => new \DateTime('2010-01-01'),
-                'kilometrage' => 50000,
-                'carburant' => 'Essence',
-                'boiteDeVitesse' => 'Manuelle',
-                'nomMarque' => 'Datsun',
-                'nomModele' => '260Z 2+2',
-            ],
-            [
-                'prix' => 10000,
-                'annee' => new \DateTime('2010-01-01'),
-                'kilometrage' => 50000,
-                'carburant' => 'Essence',
-                'boiteDeVitesse' => 'Manuelle',
-                'nomMarque' => 'Datsun',
-                'nomModele' => '260Z 2+2',
-            ],
-            [
-                'prix' => 10000,
-                'annee' => new \DateTime('2010-01-01'),
-                'kilometrage' => 50000,
-                'carburant' => 'Essence',
-                'boiteDeVitesse' => 'Manuelle',
-                'nomMarque' => 'Datsun',
-                'nomModele' => '260Z 2+2',
-            ],
-            [
-                'prix' => 10000,
-                'annee' => new \DateTime('2010-01-01'),
-                'kilometrage' => 50000,
-                'carburant' => 'Essence',
-                'boiteDeVitesse' => 'Manuelle',
-                'nomMarque' => 'Datsun',
-                'nomModele' => '260Z 2+2',
-            ],
-            [
-                'prix' => 10000,
-                'annee' => new \DateTime('2010-01-01'),
-                'kilometrage' => 50000,
-                'carburant' => 'Essence',
-                'boiteDeVitesse' => 'Manuelle',
-                'nomMarque' => 'Datsun',
-                'nomModele' => '260Z 2+2',
-            ]
         ];
 
         // foreach ($voituresData as $data)
