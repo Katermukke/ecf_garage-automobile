@@ -14,7 +14,7 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'home')]
+    #[Route('/home', name: 'home')]
     public function home(Request $request, EntityManagerInterface $entityManager, AvisRepository $avisRepository, HorairesRepository $horairesRepository): Response
     {
         $avis = new Avis();
@@ -31,7 +31,7 @@ class HomeController extends AbstractController
             return $this->redirectToRoute('home');
         }
 
-        return $this->render('base.html.twig', [
+        return $this->render('home.html.twig', [
             'avis' => $avisRepository->findBy([]),
             'horaires' => $horairesRepository->findBy([]),
             'form' => $form->createView()

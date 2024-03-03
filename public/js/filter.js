@@ -61,7 +61,7 @@ function filtreKilometres(kmVoiture, critereKm) {
 
 function afficherVoituresFiltrees(voituresFiltrees) {
   const conteneurVoitures = document.querySelector(
-    "#conteneurVoituresOccasions"
+    "#containerVoituresOccasions"
   );
   conteneurVoitures.innerHTML = ""; // Efface le contenu actuel
 

@@ -1,142 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  text-decoration: none;
-  color: black;
-}
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 @font-face {
   font-family: "audiowide";
   src: url("../../font/audiowide.woff2") format("woff2"), url("../../font/audiowide.woff") format("woff");
@@ -347,11 +208,14 @@ table {
 .navbar .contain .navbar-collapse .seConnecter svg {
   height: 0.8rem;
   width: 0.8rem;
+  margin-right: 0.7rem;
 }
-.navbar .contain .navbar-collapse .seConnecter .btn {
+.navbar .contain .navbar-collapse .seConnecter .button {
   width: auto;
+  background: none;
+  border: none;
 }
-.navbar .contain .navbar-collapse .seConnecter .btn a {
+.navbar .contain .navbar-collapse .seConnecter .button a {
   font-size: 0.75rem;
 }
 
@@ -376,6 +240,607 @@ header .voitureRouiller .newGreatThings {
   transform: translate(50%, 30%);
   width: 50%;
   height: auto;
+}
+
+.categorie .headCategorie {
+  margin: 6rem 0 6rem 0;
+}
+.categorie .headCategorie .titleCategorie {
+  text-align: center;
+  font-family: var(--font-bethellen);
+  margin-bottom: 3rem;
+}
+.categorie .headCategorie .titleCategorie span {
+  color: var(--color-orange);
+}
+.categorie .headCategorie p {
+  text-align: center;
+}
+.categorie .wrapperCategorie {
+  display: flex;
+  height: 27rem;
+  font-family: var(--font-audiowide);
+  margin-bottom: 6rem;
+}
+@media (max-width: 1024px) {
+  .categorie .wrapperCategorie {
+    flex-direction: column;
+    align-items: center;
+    height: 35rem;
+  }
+}
+.categorie .wrapperCategorie .categorie {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 33.3333333333%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  text-decoration: none;
+}
+.categorie .wrapperCategorie .categorie h3 {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  .categorie .wrapperCategorie .categorie {
+    width: 100%;
+  }
+}
+.categorie .wrapperCategorie .categorie:nth-child(1) {
+  background-image: url(assets/moteur.jpg);
+}
+.categorie .wrapperCategorie .categorie:nth-child(2) {
+  background-image: url(assets/coccinelle3.jpg);
+}
+.categorie .wrapperCategorie .categorie:nth-child(3) {
+  background-image: url(assets/mecanicien.jpeg);
+}
+.categorie .modalite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15rem;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+  padding: 2rem;
+  background-color: var(--color-sand);
+}
+@media (max-width: 768px) {
+  .categorie .modalite {
+    flex-direction: column;
+    height: auto;
+    margin: 0 3rem 0 3rem;
+  }
+}
+.categorie .modalite .item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 25%;
+  font-family: var(--font-audiowide);
+}
+@media (max-width: 768px) {
+  .categorie .modalite .item {
+    height: 12rem;
+    width: 70%;
+    border-bottom: solid 0.1rem var(--color-white);
+    margin-bottom: 2rem;
+  }
+}
+.categorie .modalite .item svg {
+  margin-bottom: 2rem;
+}
+.categorie .modalite .item p {
+  height: 2rem;
+  font-size: 0.8rem;
+  color: var(--color-white);
+}
+@media (max-width: 768px) {
+  .categorie .modalite .item p {
+    height: auto;
+  }
+}
+
+.services .headServices {
+  margin: 6rem 0 6rem 0;
+}
+.services .headServices .titleServices {
+  text-align: center;
+  font-family: var(--font-bethellen);
+  margin-bottom: 3rem;
+}
+.services .headServices .titleServices span {
+  color: var(--color-orange);
+}
+.services .headServices p {
+  text-align: center;
+}
+.services .wrapperServicesTop {
+  display: flex;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  height: 28rem;
+  margin: 0 2rem 2rem 2rem;
+  font-family: var(--font-audiowide);
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesTop {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+}
+.services .wrapperServicesTop .largeServices {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  background-color: var(--color-sand);
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesTop .largeServices {
+    margin-bottom: 2rem;
+    width: auto;
+  }
+}
+.services .wrapperServicesTop .largeServices .soupape {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesTop .largeServices .soupape {
+    height: auto;
+  }
+}
+.services .wrapperServicesTop .largeServices .servicesOne {
+  padding-top: 2rem;
+}
+.services .wrapperServicesTop .largeServices .servicesOne h4 {
+  color: var(--color-orange);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesTop .largeServices .servicesOne h4 {
+    font-size: 1rem;
+  }
+}
+.services .wrapperServicesTop .largeServices .servicesOne .information p {
+  color: var(--color-white);
+  font-size: 0.8rem;
+}
+.services .wrapperServicesTop .largeServices .servicesOne .information p .point {
+  color: var(--color-orange);
+}
+.services .wrapperServicesTop .splitServices {
+  display: flex;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  height: 100%;
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesTop .splitServices {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+.services .wrapperServicesTop .splitServices .servicesTwo {
+  width: 50%;
+  background-color: var(--color-sand);
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesTop .splitServices .servicesTwo {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+.services .wrapperServicesTop .splitServices .servicesTwo .huile {
+  width: 100%;
+}
+.services .wrapperServicesTop .splitServices .servicesTwo .information {
+  padding: 2rem 0 0 2rem;
+}
+@media (max-width: 768px) {
+  .services .wrapperServicesTop .splitServices .servicesTwo .information {
+    padding: 2rem 1rem 0 1rem;
+  }
+}
+.services .wrapperServicesTop .splitServices .servicesTwo .information h4 {
+  color: var(--color-orange);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesTop .splitServices .servicesTwo .information h4 {
+    font-size: 1rem;
+  }
+}
+.services .wrapperServicesTop .splitServices .servicesTwo .information .paragraph {
+  padding-bottom: 2rem;
+}
+.services .wrapperServicesTop .splitServices .servicesTwo .information .paragraph p {
+  color: var(--color-white);
+  font-size: 0.8rem;
+}
+.services .wrapperServicesTop .splitServices .servicesTwo .information .paragraph p .point {
+  color: var(--color-orange);
+}
+.services .wrapperServicesTop .splitServices .servicesThree {
+  width: 50%;
+  background-color: var(--color-sand);
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesTop .splitServices .servicesThree {
+    width: 100%;
+  }
+}
+.services .wrapperServicesTop .splitServices .servicesThree .plaquette {
+  width: 100%;
+}
+.services .wrapperServicesTop .splitServices .servicesThree .information {
+  padding: 2rem 0 0 2rem;
+}
+@media (max-width: 768px) {
+  .services .wrapperServicesTop .splitServices .servicesThree .information {
+    padding: 2rem 1rem 0 1rem;
+  }
+}
+.services .wrapperServicesTop .splitServices .servicesThree .information h4 {
+  color: var(--color-orange);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesTop .splitServices .servicesThree .information h4 {
+    font-size: 1rem;
+  }
+}
+.services .wrapperServicesTop .splitServices .servicesThree .information .paragraph p {
+  color: var(--color-white);
+  font-size: 0.8rem;
+}
+.services .wrapperServicesTop .splitServices .servicesThree .information .paragraph p .point {
+  color: var(--color-orange);
+}
+.services .wrapperServicesBottom {
+  display: flex;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  margin: 0 2rem 0 2rem;
+  height: 28rem;
+  font-family: var(--font-audiowide);
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesBottom {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+}
+.services .wrapperServicesBottom .splitServicesTwo {
+  display: flex;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  height: 100%;
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesBottom .splitServicesTwo {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFour {
+  width: 50%;
+  background-color: var(--color-sand);
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesBottom .splitServicesTwo .servicesFour {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFour .courroie {
+  width: 100%;
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFour .information {
+  padding: 2rem 0 0 2rem;
+}
+@media (max-width: 768px) {
+  .services .wrapperServicesBottom .splitServicesTwo .servicesFour .information {
+    padding: 2rem 1rem 0 1rem;
+  }
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFour .information h4 {
+  color: var(--color-orange);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesBottom .splitServicesTwo .servicesFour .information h4 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .services .wrapperServicesBottom .splitServicesTwo .servicesFour .information h4 {
+    font-size: 0.8rem;
+  }
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFour .information .paragraph p {
+  color: var(--color-white);
+  font-size: 0.8rem;
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFour .information .paragraph p .point {
+  color: var(--color-orange);
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFive {
+  width: 50%;
+  background-color: var(--color-sand);
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesBottom .splitServicesTwo .servicesFive {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFive .suspension {
+  width: 100%;
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFive .information {
+  padding: 2rem 0 0 2rem;
+}
+@media (max-width: 768px) {
+  .services .wrapperServicesBottom .splitServicesTwo .servicesFive .information {
+    padding: 2rem 1rem 0 1rem;
+  }
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFive .information h4 {
+  color: var(--color-orange);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesBottom .splitServicesTwo .servicesFive .information h4 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .services .wrapperServicesBottom .splitServicesTwo .servicesFive .information h4 {
+    font-size: 0.8rem;
+  }
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFive .information .paragraph p {
+  color: var(--color-white);
+  font-size: 0.8rem;
+}
+.services .wrapperServicesBottom .splitServicesTwo .servicesFive .information .paragraph p .point {
+  color: var(--color-orange);
+}
+.services .wrapperServicesBottom .largeServicesTwo {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  background-color: var(--color-sand);
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesBottom .largeServicesTwo {
+    width: auto;
+  }
+}
+.services .wrapperServicesBottom .largeServicesTwo .batterie {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesBottom .largeServicesTwo .batterie {
+    height: auto;
+  }
+}
+.services .wrapperServicesBottom .largeServicesTwo .servicesSix {
+  padding-top: 2rem;
+}
+.services .wrapperServicesBottom .largeServicesTwo .servicesSix h4 {
+  color: var(--color-orange);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+@media (max-width: 1024px) {
+  .services .wrapperServicesBottom .largeServicesTwo .servicesSix h4 {
+    font-size: 1rem;
+  }
+}
+.services .wrapperServicesBottom .largeServicesTwo .servicesSix .information p {
+  color: var(--color-white);
+  font-size: 0.8rem;
+}
+.services .wrapperServicesBottom .largeServicesTwo .servicesSix .information p .point {
+  color: var(--color-orange);
+}
+
+.avis .headAvis {
+  margin: 5rem 0 5rem 0;
+}
+.avis .headAvis .titleAvis {
+  text-align: center;
+  font-family: var(--font-bethellen);
+  margin-bottom: 3rem;
+}
+.avis .headAvis .titleAvis span {
+  color: var(--color-orange);
+}
+.avis .headAvis p {
+  text-align: center;
+  padding: 0 3.5rem 0 3.5rem;
+}
+.avis .wrapperAvis {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+  padding: 0 0 0 1.5rem;
+  margin: 0 4rem 5rem 4rem;
+}
+@media (max-width: 1024px) {
+  .avis .wrapperAvis {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    margin: 0 2rem 5rem 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .avis .wrapperAvis {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.avis .wrapperAvis .cardAvis {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 31rem;
+  width: calc(30% - 1rem);
+  background-color: var(--color-sand);
+  color: var(--color-white);
+  font-family: var(--font-audiowide);
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .avis .wrapperAvis .cardAvis {
+    margin-bottom: 3rem;
+    width: 100%;
+    height: 25rem;
+  }
+}
+.avis .wrapperAvis .cardAvis img {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 9rem;
+  width: 9rem;
+}
+@media (max-width: 1024px) {
+  .avis .wrapperAvis .cardAvis img {
+    height: 7rem;
+    width: 7rem;
+  }
+}
+.avis .wrapperAvis .cardAvis h4 span {
+  color: var(--color-orange);
+}
+@media (max-width: 768px) {
+  .avis .wrapperAvis .cardAvis svg {
+    height: 0.9rem;
+  }
+}
+.avis .wrapperAvis .cardAvis p {
+  font-size: 0.8rem;
+  color: var(--color-white);
+  height: 8rem;
+  margin: 0;
+  overflow-y: scroll;
+}
+.avis .wrapperAvis .cardAvis p span {
+  color: var(--color-orange);
+}
+.avis .readAvis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--color-sand);
+}
+.avis .readAvis .titleReadAvis {
+  font-family: var(--font-bethellen);
+  margin: 2rem 0 2rem 0;
+  color: var(--color-white);
+  font-size: 1.2rem;
+}
+.avis .readAvis .titleReadAvis .point {
+  color: var(--color-orange);
+}
+.avis .readAvis .form-avis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+}
+.avis .readAvis .form-avis div {
+  width: 100%;
+}
+.avis .readAvis .form-avis div .input-avis {
+  display: flex;
+  padding-left: 2rem;
+  height: 3rem;
+  width: 100%;
+  border-radius: 4rem;
+  border: 0.1rem solid #fff;
+  background-color: var(--color-sand);
+  font-family: var(--font-audiowide);
+  color: var(--color-beige);
+  margin-bottom: 1rem;
+}
+.avis .readAvis .form-avis div .input-avis::-moz-placeholder {
+  color: var(--color-beige);
+}
+.avis .readAvis .form-avis div .input-avis::placeholder {
+  color: var(--color-beige);
+}
+.avis .readAvis .form-avis #avis_valide {
+  display: none;
+}
+.avis .readAvis .form-avis #avis_note {
+  display: none;
+}
+.avis .readAvis .form-avis textarea {
+  height: 12rem;
+  width: 100%;
+  border-radius: 1.8rem;
+  color: var(--color-beige);
+  background-color: var(--color-sand);
+  border: solid var(--color-white) 0.1rem;
+  text-align: start;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  vertical-align: top;
+  font-family: var(--font-audiowide);
+  margin-bottom: 1rem;
+}
+.avis .readAvis .form-avis textarea::-moz-placeholder {
+  color: var(--color-beige);
+}
+.avis .readAvis .form-avis textarea::placeholder {
+  color: var(--color-beige);
+}
+@media (max-width: 768px) {
+  .avis .readAvis .form-avis textarea {
+    font-size: 0.7rem;
+  }
+}
+.avis .readAvis .form-avis textarea .point {
+  color: var(--color-orange);
 }
 
 .newsletter {
@@ -576,7 +1041,7 @@ header .voitureRouiller .newGreatThings {
   }
 }
 
-button {
+.btn {
   height: 4.5rem;
   width: 12rem;
   border-radius: 2rem;
@@ -587,11 +1052,12 @@ button {
   margin-bottom: 1rem;
 }
 
-.conteneurVoituresOccasions {
+#containerVoituresOccasions {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.conteneurVoituresOccasions .cardOccasions {
+#containerVoituresOccasions .cardOccasions {
   width: 80%;
   height: 18rem;
   display: flex;
@@ -599,29 +1065,29 @@ button {
   margin-bottom: 2rem;
 }
 @media (max-width: 1024px) {
-  .conteneurVoituresOccasions .cardOccasions {
+  #containerVoituresOccasions .cardOccasions {
     flex-direction: column;
     align-items: center;
     height: auto;
   }
 }
-.conteneurVoituresOccasions .cardOccasions img {
+#containerVoituresOccasions .cardOccasions img {
   width: 40%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 @media (max-width: 1024px) {
-  .conteneurVoituresOccasions .cardOccasions img {
+  #containerVoituresOccasions .cardOccasions img {
     width: 80%;
   }
 }
 @media (max-width: 768px) {
-  .conteneurVoituresOccasions .cardOccasions img {
+  #containerVoituresOccasions .cardOccasions img {
     width: 100%;
   }
 }
-.conteneurVoituresOccasions .cardOccasions .description {
+#containerVoituresOccasions .cardOccasions .description {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -632,22 +1098,22 @@ button {
   color: var(--color-white);
 }
 @media (max-width: 1024px) {
-  .conteneurVoituresOccasions .cardOccasions .description {
+  #containerVoituresOccasions .cardOccasions .description {
     width: 80%;
   }
 }
 @media (max-width: 768px) {
-  .conteneurVoituresOccasions .cardOccasions .description {
+  #containerVoituresOccasions .cardOccasions .description {
     width: 100%;
   }
 }
-.conteneurVoituresOccasions .cardOccasions .description .titleDescription {
+#containerVoituresOccasions .cardOccasions .description .titleDescription {
   font-size: 1.2rem;
 }
-.conteneurVoituresOccasions .cardOccasions .description .price {
+#containerVoituresOccasions .cardOccasions .description .price {
   color: inherit;
 }
-.conteneurVoituresOccasions .cardOccasions .description .payment {
+#containerVoituresOccasions .cardOccasions .description .payment {
   padding: 0.2rem;
   text-align: center;
   width: 9.5rem;
@@ -657,16 +1123,16 @@ button {
   color: inherit;
   margin-bottom: 2rem;
 }
-.conteneurVoituresOccasions .cardOccasions .description .filter {
+#containerVoituresOccasions .cardOccasions .description .filter {
   display: flex;
   justify-content: space-between;
   color: var(--color-white);
 }
-.conteneurVoituresOccasions .cardOccasions .description .filter div {
+#containerVoituresOccasions .cardOccasions .description .filter div {
   color: inherit;
 }
 @media (max-width: 1024px) {
-  .conteneurVoituresOccasions .cardOccasions .description .filter div {
+  #containerVoituresOccasions .cardOccasions .description .filter div {
     font-size: 0.8rem;
   }
 }
@@ -911,7 +1377,7 @@ button {
 .contact form .formGroup textarea::placeholder {
   color: var(--color-beige);
 }
-.contact form button {
+.contact form .btn {
   height: 4.5rem;
   width: 12rem;
   border-radius: 2rem;
@@ -965,11 +1431,12 @@ button {
   border: none;
   color: var(--color-white);
 }
-.voitureOccasions .conteneurVoituresOccasions {
+.voitureOccasions #containerVoituresOccasions {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.voitureOccasions .conteneurVoituresOccasions .cardOccasions {
+.voitureOccasions #containerVoituresOccasions .cardOccasions {
   width: 80%;
   height: 18rem;
   display: flex;
@@ -977,29 +1444,29 @@ button {
   margin-bottom: 2rem;
 }
 @media (max-width: 1024px) {
-  .voitureOccasions .conteneurVoituresOccasions .cardOccasions {
+  .voitureOccasions #containerVoituresOccasions .cardOccasions {
     flex-direction: column;
     align-items: center;
     height: auto;
   }
 }
-.voitureOccasions .conteneurVoituresOccasions .cardOccasions img {
+.voitureOccasions #containerVoituresOccasions .cardOccasions img {
   width: 40%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 @media (max-width: 1024px) {
-  .voitureOccasions .conteneurVoituresOccasions .cardOccasions img {
+  .voitureOccasions #containerVoituresOccasions .cardOccasions img {
     width: 80%;
   }
 }
 @media (max-width: 768px) {
-  .voitureOccasions .conteneurVoituresOccasions .cardOccasions img {
+  .voitureOccasions #containerVoituresOccasions .cardOccasions img {
     width: 100%;
   }
 }
-.voitureOccasions .conteneurVoituresOccasions .cardOccasions .description {
+.voitureOccasions #containerVoituresOccasions .cardOccasions .description {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1010,22 +1477,22 @@ button {
   color: var(--color-white);
 }
 @media (max-width: 1024px) {
-  .voitureOccasions .conteneurVoituresOccasions .cardOccasions .description {
+  .voitureOccasions #containerVoituresOccasions .cardOccasions .description {
     width: 80%;
   }
 }
 @media (max-width: 768px) {
-  .voitureOccasions .conteneurVoituresOccasions .cardOccasions .description {
+  .voitureOccasions #containerVoituresOccasions .cardOccasions .description {
     width: 100%;
   }
 }
-.voitureOccasions .conteneurVoituresOccasions .cardOccasions .description .titleDescription {
+.voitureOccasions #containerVoituresOccasions .cardOccasions .description .titleDescription {
   font-size: 1.2rem;
 }
-.voitureOccasions .conteneurVoituresOccasions .cardOccasions .description .price {
+.voitureOccasions #containerVoituresOccasions .cardOccasions .description .price {
   color: inherit;
 }
-.voitureOccasions .conteneurVoituresOccasions .cardOccasions .description .payment {
+.voitureOccasions #containerVoituresOccasions .cardOccasions .description .payment {
   padding: 0.2rem;
   text-align: center;
   width: 9.5rem;
@@ -1035,16 +1502,16 @@ button {
   color: inherit;
   margin-bottom: 2rem;
 }
-.voitureOccasions .conteneurVoituresOccasions .cardOccasions .description .filter {
+.voitureOccasions #containerVoituresOccasions .cardOccasions .description .filter {
   display: flex;
   justify-content: space-between;
   color: var(--color-white);
 }
-.voitureOccasions .conteneurVoituresOccasions .cardOccasions .description .filter div {
+.voitureOccasions #containerVoituresOccasions .cardOccasions .description .filter div {
   color: inherit;
 }
 @media (max-width: 1024px) {
-  .voitureOccasions .conteneurVoituresOccasions .cardOccasions .description .filter div {
+  .voitureOccasions #containerVoituresOccasions .cardOccasions .description .filter div {
     font-size: 0.8rem;
   }
 }/*# sourceMappingURL=main.css.map */

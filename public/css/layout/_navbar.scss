@@ -103,10 +103,13 @@
         svg {
           height: 0.8rem;
           width: 0.8rem;
+          margin-right: 0.7rem;
         }
 
-        .btn {
+        .button {
           width: auto;
+          background: none;
+          border: none;
 
           a {
             font-size: 0.75rem;
