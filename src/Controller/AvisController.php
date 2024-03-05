@@ -20,10 +20,16 @@ class AvisController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($avis);
             $entityManager->flush();
+            $this->addFlash('success', 'Votre formulaire a été envoyé avec succès.');
+            return $this->redirectToRoute('home');
         }
 
-        return $this->render('avissoumettre.html.twig', [
+        // Récupérer tous les avis pour les afficher
+        $tousLesAvis = $entityManager->getRepository(Avis::class)->findAll();
+
+        return $this->render('home.html.twig', [
             'form' => $form->createView(),
+            'avis' => $tousLesAvis,
         ]);
     }
 }
