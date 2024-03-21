@@ -1,29 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("contact-form")
+  document.getElementById("contact-form")
     .addEventListener("submit", function (event) {
-      var champsTexte = this.querySelectorAll('input[type="text"], textarea');
-      var caractereInterdits = /[&<>"']/;
-      var estValide = true;
-      var messageErreur = document.getElementById("message-erreur");
+      var textFields = this.querySelectorAll('input[type="text"], textarea');
+      var prohibitedCharacter = /[&<>"']/;
+      var isValid = true;
+      var messageError = document.getElementById("message-erreur");
 
-      champsTexte.forEach(function (champ) {
-        if (caractereInterdits.test(champ.value)) {
-          estValide = false;
+      textFields.forEach(function (champ) {
+        if (prohibitedCharacter.test(champ.value)) {
+          isValid = false;
           console.error(
             "Le champ contient des caractères interdits : & < > \" '"
           );
-          if (!messageErreur) {
-            messageErreur = document.createElement("div");
-            messageErreur.id = "message-erreur";
-            champ.parentNode.insertBefore(messageErreur, champ.nextSibling);
+          if (!messageError) {
+            messageError = document.createElement("div");
+            messageError.id = "message-erreur";
+            champ.parentNode.insertBefore(messageError, champ.nextSibling);
           }
-          messageErreur.textContent =
+          messageError.textContent =
             "Le formulaire contient des caractères interdits.";
         }
       });
 
-      if (!estValide) {
+      if (!isValid) {
         event.preventDefault(); // Empêche la soumission du formulaire
       }
     });

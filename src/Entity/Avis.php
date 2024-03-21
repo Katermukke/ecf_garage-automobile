@@ -16,33 +16,24 @@ class Avis
     private ?int $id = null;
 
     #[ORM\Column(length: 50)]
-    /**
-     * @Assert\Regex(
-     *     pattern="/^[^&<>\"']*$/",
-     *     match=true,
-     *     message="Le nom ne doit pas contenir de caractères spéciaux."
-     * )
-     */
+    #[Assert\Regex(
+        pattern: "/^[^&<>\"']*$/",
+        message: "Le nom ne doit pas contenir de caractères spéciaux."
+    )]
     private ?string $nom = null;
 
     #[ORM\Column(length: 50)]
-    /**
-     * @Assert\Regex(
-     *     pattern="/^[^&<>\"']*$/",
-     *     match=true,
-     *     message="Le nom ne doit pas contenir de caractères spéciaux."
-     * )
-     */
+    #[Assert\Regex(
+        pattern: "/^[^&<>\"']*$/",
+        message: "Le prenom ne doit pas contenir de caractères spéciaux."
+    )]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 2000)]
-    /**
-     * @Assert\Regex(
-     *     pattern="/^[^&<>\"']*$/",
-     *     match=true,
-     *     message="Le commentaire ne doit pas contenir de caractères spéciaux."
-     * )
-     */
+    #[Assert\Regex(
+        pattern: "/^[^&<>\"']*$/",
+        message: "Le commentaire ne doit pas contenir de caractères spéciaux."
+    )]
     private ?string $commentaire = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]

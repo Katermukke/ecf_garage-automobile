@@ -83,6 +83,7 @@
         height: 8rem;
         margin: 0;
         overflow-y: scroll;
+        scrollbar-width: none;
 
         span {
           color: var(--color-orange);

@@ -21,8 +21,7 @@ class VoitureOccasionController extends AbstractController
                 'Aucune voiture trouvée pour cet id ' . $id
             );
         }
-
-        // Passer la voitureOccasion à la vue
+        
         return $this->render('voitureOccasion.html.twig', [
             'voitureOccasion' => $voitureOccasion,
             'horaires' => $horaires

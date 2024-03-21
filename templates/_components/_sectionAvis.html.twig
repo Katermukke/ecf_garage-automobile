@@ -14,11 +14,13 @@
 			{% set animationClass = cycle(animationClasses, avi.id - offset) %}
 
 			{% set imagePath = '' %}
-			{% if avi.id == 1 %}
+			{% if avi.id == 6 %}
 				{% set imagePath = 'css/assets/homme1.jpeg' %}
-			{% elseif avi.id == 2 %}
+			{% elseif avi.id == 7 %}
 				{% set imagePath = 'css/assets/femme.jpeg' %}
-			{% elseif avi.id == 3 %}
+			{% elseif avi.id == 8 %}
+				{% set imagePath = 'css/assets/homme2.jpeg' %}
+			{% elseif avi.id == 9 %}
 				{% set imagePath = 'css/assets/homme2.jpeg' %}
 			{% endif %}
 

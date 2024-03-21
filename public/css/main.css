@@ -760,6 +760,7 @@ header .voitureRouiller .newGreatThings {
   height: 8rem;
   margin: 0;
   overflow-y: scroll;
+  scrollbar-width: none;
 }
 .avis .wrapperAvis .cardAvis p span {
   color: var(--color-orange);
@@ -1113,16 +1114,6 @@ header .voitureRouiller .newGreatThings {
 #containerVoituresOccasions .cardOccasions .description .price {
   color: inherit;
 }
-#containerVoituresOccasions .cardOccasions .description .payment {
-  padding: 0.2rem;
-  text-align: center;
-  width: 9.5rem;
-  background-color: var(--color-orange);
-  border-radius: 2rem;
-  font-size: 0.8rem;
-  color: inherit;
-  margin-bottom: 2rem;
-}
 #containerVoituresOccasions .cardOccasions .description .filter {
   display: flex;
   justify-content: space-between;
@@ -1135,6 +1126,16 @@ header .voitureRouiller .newGreatThings {
   #containerVoituresOccasions .cardOccasions .description .filter div {
     font-size: 0.8rem;
   }
+}
+#containerVoituresOccasions .cardOccasions .description span {
+  padding: 0.3rem;
+  text-align: center;
+  width: 6.5rem;
+  background-color: var(--color-orange);
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  color: inherit;
+  margin-top: 2rem;
 }
 
 .container {
@@ -1419,11 +1420,69 @@ header .voitureRouiller .newGreatThings {
   width: 80%;
   margin: 0 0 4rem 0;
 }
-.voitureOccasions #selectFilter .filter h4 {
+@media (max-width: 1024px) {
+  .voitureOccasions #selectFilter {
+    flex-direction: column;
+  }
+}
+.voitureOccasions #selectFilter .firstFilterWrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+@media (max-width: 768px) {
+  .voitureOccasions #selectFilter .firstFilterWrapper {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .voitureOccasions #selectFilter .firstFilterWrapper .filter:nth-child(2) {
+    margin: 0;
+  }
+}
+@media (max-width: 768px) {
+  .voitureOccasions #selectFilter .firstFilterWrapper .filter {
+    margin-bottom: 2rem;
+  }
+}
+.voitureOccasions #selectFilter .firstFilterWrapper .filter h4 {
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
-.voitureOccasions #selectFilter .filter select {
+.voitureOccasions #selectFilter .firstFilterWrapper .filter select {
+  font-family: var(--font-audiowide);
+  font-size: 0.7rem;
+  background-color: var(--color-sand);
+  padding: 0.5rem;
+  border: none;
+  color: var(--color-white);
+}
+.voitureOccasions #selectFilter .secondFilterWrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+@media (max-width: 1024px) {
+  .voitureOccasions #selectFilter .secondFilterWrapper {
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .voitureOccasions #selectFilter .secondFilterWrapper {
+    margin-top: 2rem;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .voitureOccasions #selectFilter .secondFilterWrapper .filter {
+    margin-bottom: 2rem;
+  }
+}
+.voitureOccasions #selectFilter .secondFilterWrapper .filter h4 {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+.voitureOccasions #selectFilter .secondFilterWrapper .filter select {
   font-family: var(--font-audiowide);
   font-size: 0.7rem;
   background-color: var(--color-sand);
@@ -1492,16 +1551,6 @@ header .voitureRouiller .newGreatThings {
 .voitureOccasions #containerVoituresOccasions .cardOccasions .description .price {
   color: inherit;
 }
-.voitureOccasions #containerVoituresOccasions .cardOccasions .description .payment {
-  padding: 0.2rem;
-  text-align: center;
-  width: 9.5rem;
-  background-color: var(--color-orange);
-  border-radius: 2rem;
-  font-size: 0.8rem;
-  color: inherit;
-  margin-bottom: 2rem;
-}
 .voitureOccasions #containerVoituresOccasions .cardOccasions .description .filter {
   display: flex;
   justify-content: space-between;
@@ -1514,4 +1563,14 @@ header .voitureRouiller .newGreatThings {
   .voitureOccasions #containerVoituresOccasions .cardOccasions .description .filter div {
     font-size: 0.8rem;
   }
+}
+.voitureOccasions #containerVoituresOccasions .cardOccasions .description span {
+  padding: 0.3rem;
+  text-align: center;
+  width: 6.5rem;
+  background-color: var(--color-orange);
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  color: inherit;
+  margin-top: 2rem;
 }/*# sourceMappingURL=main.css.map */

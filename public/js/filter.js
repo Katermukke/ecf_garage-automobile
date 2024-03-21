@@ -69,17 +69,17 @@ function afficherVoituresFiltrees(voituresFiltrees) {
   const conteneurVoitures = document.querySelector(
     "#containerVoituresOccasions"
   );
-  conteneurVoitures.innerHTML = ""; // Efface le contenu actuel
+  conteneurVoitures.innerHTML = "";
 
   voituresFiltrees.forEach((voiture) => {
     let imageURL = voiture.image
       ? `/images/products/${voiture.image}`
-      : "images/default-car.png"; // Utilisez un placeholder si aucune image n'est définie
+      : "images/default-car.png";
     if (
       voiture.voituresOcassionsImages &&
       voiture.voituresOcassionsImages.length > 0
     ) {
-      imageURL = `/images/products/${voiture.voituresOcassionsImages[0].nom}`; // Première image disponible
+      imageURL = `/images/products/${voiture.voituresOcassionsImages[0].nom}`;
     }
 
     const divVoiture = document.createElement("div");
@@ -89,13 +89,16 @@ function afficherVoituresFiltrees(voituresFiltrees) {
         <div class="description">
             <h4 class="titleDescription">${voiture.marque.nom} - ${voiture.marque.modeles}</h4>
             <p>Prix: ${voiture.prix}€</p>
-            <span class="payment">Paiement sécurisé</span>
+            <p>Critères :</p>
             <div class="filter">
             <p>Année: ${voiture.annee}</p>
             <p>Kilométrage: ${voiture.kilometrage}km</p>
             <p>Carburant: ${voiture.carburant}</p>
             <p>Boite de vitesse: ${voiture.boiteDeVitesse}</p>
             </div>
+            <span>
+            <a class="nav-link" href="{{ path('voitureOccasion', {'id': voitureOccasion.id}) }}">Détails</a>
+            </span>
         </div>
         `;
     conteneurVoitures.appendChild(divVoiture);

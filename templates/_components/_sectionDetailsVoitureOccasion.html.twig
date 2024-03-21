@@ -13,7 +13,6 @@
 				{{ voitureOccasion.voituresOcassionsMarques.modeles }}
 			</h4>
 			<p class="price">{{ voitureOccasion.prix }}</p>
-			<span class="payment">Paiement sécurisé</span>
 			<div class="filter">
 				<div class="years">Année :
 					{{ voitureOccasion.annee|date('Y') }}</div>
@@ -24,6 +23,9 @@
 				<div class="gearbox">Boite de vitesse :
 					{{ voitureOccasion.boiteDeVitesse }}</div>
 			</div>
+			<span>
+				<a class="nav-link" href="{{ path('voitureOccasion', {'id': voitureOccasion.id}) }}">Détails</a>
+			</span>
 		</div>
 	</div>
 </div>

@@ -29,19 +29,81 @@
     width: 80%;
     margin: 0 0 4rem 0;
 
-    .filter {
-      h4 {
-        margin-bottom: 1.5rem;
-        font-size: 1rem;
+    @include lg-max {
+      flex-direction: column;
+    }
+
+    .firstFilterWrapper {
+      display: flex;
+      justify-content: space-around;
+      width: 80%;
+
+      @include md-max {
+        flex-direction: column;
       }
 
-      select {
-        font-family: var(--font-audiowide);
-        font-size: 0.7rem;
-        background-color: var(--color-sand);
-        padding: 0.5rem;
-        border: none;
-        color: var(--color-white);
+      .filter:nth-child(2) {
+        @include md-max {
+          margin: 0;
+        }
+      }
+
+      .filter {
+        @include md-max {
+          margin-bottom: 2rem;
+        }
+
+        h4 {
+          margin-bottom: 1.5rem;
+          font-size: 1rem;
+        }
+
+        select {
+          font-family: var(--font-audiowide);
+          font-size: 0.7rem;
+          background-color: var(--color-sand);
+          padding: 0.5rem;
+          border: none;
+          color: var(--color-white);
+
+          @include md-max {
+          }
+        }
+      }
+    }
+
+    .secondFilterWrapper {
+      display: flex;
+      justify-content: space-around;
+      width: 80%;
+
+      @include lg-max {
+        margin-top: 2rem;
+      }
+
+      @include md-max {
+        margin-top: 2rem;
+        flex-direction: column;
+      }
+
+      .filter {
+        @include md-max {
+          margin-bottom: 2rem;
+        }
+
+        h4 {
+          margin-bottom: 1.5rem;
+          font-size: 1rem;
+        }
+
+        select {
+          font-family: var(--font-audiowide);
+          font-size: 0.7rem;
+          background-color: var(--color-sand);
+          padding: 0.5rem;
+          border: none;
+          color: var(--color-white);
+        }
       }
     }
   }

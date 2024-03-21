@@ -55,17 +55,6 @@
         color: inherit;
       }
 
-      .payment {
-        padding: 0.2rem;
-        text-align: center;
-        width: 9.5rem;
-        background-color: var(--color-orange);
-        border-radius: 2rem;
-        font-size: 0.8rem;
-        color: inherit;
-        margin-bottom: 2rem;
-      }
-
       .filter {
         display: flex;
         justify-content: space-between;
@@ -77,6 +66,17 @@
             font-size: 0.8rem;
           }
         }
+      }
+
+      span {
+        padding: 0.3rem;
+        text-align: center;
+        width: 6.5rem;
+        background-color: var(--color-orange);
+        border-radius: 2rem;
+        font-size: 0.8rem;
+        color: inherit;
+        margin-top: 2rem;
       }
     }
   }

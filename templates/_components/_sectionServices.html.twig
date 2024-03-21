@@ -7,158 +7,86 @@
 	</div>
 	<!-- WRAPPER TOP -->
 	<div class="wrapperServicesTop">
-
-		<div class="largeServices reveal fade-bottomOne">
-			<img class="soupape" src="{{ asset('css/assets/soupape.jpeg') }}" alt="Réglette de soupape">
-			<div class="servicesOne">
-				<h4>Mécanique</h4>
-				<div class="information">
-					<p>
-						<span class="point">.</span>
-						Forfaits vidange et révision</p>
-					<p>
-						<span class="point">.</span>
-						Changement des filtres</p>
-					<p>
-						<span class="point">.</span>
-						Changement du liquide de refroidissement</p>
-					<p>
-						<span class="point">.</span>
-						Changement du liquide de  frein</p>
-					<p>
-						<span class="point">.</span>
-						Vidange boîte de vitesse ou pont</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="splitServices">
-			<div class="servicesTwo reveal fade-bottomTwo">
-				<img class="huile" src="{{ asset('css/assets/huile.png') }}" alt="Huile moteur">
-				<div class="information">
-					<h4>Révision et Vidange :</h4>
-					<div class="paragraph">
-						<p>
-							<span class="point">.</span>
-							Forfaits vidange et révision</p>
-						<p>
-							<span class="point">.</span>
-							Changement des filtres</p>
-						<p>
-							<span class="point">.</span>
-							Changement du liquide de refroidissement</p>
-						<p>
-							<span class="point">.</span>
-							Changement du liquide de  frein</p>
-						<p>
-							<span class="point">.</span>
-							Vidange boîte de vitesse ou pont</p>
+		{% for service in services %}
+			{% if service.id == 7 %}
+				<div class="largeServices reveal fade-bottomOne">
+					<img class="soupape" src="{{ asset('css/assets/soupape.jpeg') }}" alt="Réglette de soupape">
+					<div class="servicesOne">
+						<h4>{{ service.nom }}
+							:</h4>
+						<div class="information">
+							<p>{{ service.description }}</p>
+						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="servicesThree reveal fade-bottomThree">
-				<img class="plaquette" src="{{ asset('css/assets/plaquette.png') }}" alt="Plaquette de frein">
-				<div class="information">
-					<h4>Freinage</h4>
-					<div class="paragraph">
-						<p>
-							<span class="point">.</span>
-							Forfaits vidange et révision</p>
-						<p>
-							<span class="point">.</span>
-							Changement des filtres</p>
-						<p>
-							<span class="point">.</span>
-							Changement du liquide de refroidissement</p>
-						<p>
-							<span class="point">.</span>
-							Changement du liquide de  frein</p>
-						<p>
-							<span class="point">.</span>
-							Vidange boîte de vitesse ou pont</p>
+			{% elseif service.id == 8 %}
+				<div class="splitServices">
+					<div class="servicesTwo reveal fade-bottomTwo">
+						<img class="huile" src="{{ asset('css/assets/huile.png') }}" alt="Huile moteur">
+						<div class="information">
+							<h4>{{ service.nom }}
+								:</h4>
+							<div class="paragraph">
+								<p>{{ service.description }}</p>
+							</div>
+						</div>
+					</div>
+				{% elseif service.id == 9 %}
+					<div class="servicesThree reveal fade-bottomThree">
+						<img class="plaquette" src="{{ asset('css/assets/plaquette.png') }}" alt="Plaquette de frein">
+						<div class="information">
+							<h4>{{ service.nom }}
+								:</h4>
+							<div class="paragraph">
+								<p>{{ service.description }}</p>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			{% endif %}
+		{% endfor %}
 	</div>
 
 	<!-- WRAPPER BOTTOM -->
 
 	<div class="wrapperServicesBottom">
-
-		<div class="splitServicesTwo">
-			<div class="servicesFour reveal fade-bottomOne">
-				<img class="courroie" src="{{ asset('css/assets/courroie.png') }}" alt="Courroie de distribution">
-				<div class="information">
-					<h4>Distribution :</h4>
-					<div class="paragraph">
-						<p>
-							<span class="point">.</span>
-							Forfaits vidange et révision</p>
-						<p>
-							<span class="point">.</span>
-							Changement des filtres</p>
-						<p>
-							<span class="point">.</span>
-							Changement du liquide de refroidissement</p>
-						<p>
-							<span class="point">.</span>
-							Changement du liquide de  frein</p>
-						<p>
-							<span class="point">.</span>
-							Vidange boîte de vitesse ou pont</p>
+		{% for service in services %}
+			{% if service.id == 10 %}
+				<div class="splitServicesTwo">
+					<div class="servicesFour reveal fade-bottomOne">
+						<img class="courroie" src="{{ asset('css/assets/courroie.png') }}" alt="Courroie de distribution">
+						<div class="information">
+							<h4>{{ service.nom }}
+								:</h4>
+							<div class="paragraph">
+								<p>{{ service.description }}</p>
+							</div>
+						</div>
+					</div>
+				{% elseif service.id == 11 %}
+					<div class="servicesFive reveal fade-bottomTwo">
+						<img class="suspension" src="{{ asset('css/assets/suspension.png') }}" alt="Amortisseurs">
+						<div class="information">
+							<h4>{{ service.nom }}
+								:</h4>
+							<div class="paragraph">
+								<p>{{ service.description }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% elseif service.id == 12 %}
+				<div class="largeServicesTwo reveal fade-bottomThree">
+					<img class="batterie" src="{{ asset('css/assets/batterie.jpeg') }}" alt="Batterie">
+					<div class="servicesSix">
+						<h4>{{ service.nom }}
+							:</h4>
+						<div class="information">
+							<p>{{ service.description }}</p>
+						</div>
 					</div>
 				</div>
 			</div>
-
-			<div class="servicesFive reveal fade-bottomTwo">
-				<img class="suspension" src="{{ asset('css/assets/suspension.png') }}" alt="Amortisseurs">
-				<div class="information">
-					<h4>Amortisseurs :</h4>
-					<div class="paragraph">
-						<p>
-							<span class="point">.</span>
-							Forfaits vidange et révision</p>
-						<p>
-							<span class="point">.</span>
-							Changement des filtres</p>
-						<p>
-							<span class="point">.</span>
-							Changement du liquide de refroidissement</p>
-						<p>
-							<span class="point">.</span>
-							Changement du liquide de  frein</p>
-						<p>
-							<span class="point">.</span>
-							Vidange boîte de vitesse ou pont</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="largeServicesTwo reveal fade-bottomThree">
-			<img class="batterie" src="{{ asset('css/assets/batterie.jpeg') }}" alt="Batterie">
-			<div class="servicesSix">
-				<h4>Batterie et Éclairage :</h4>
-				<div class="information">
-					<p>
-						<span class="point">.</span>
-						Forfaits vidange et révision</p>
-					<p>
-						<span class="point">.</span>
-						Changement des filtres</p>
-					<p>
-						<span class="point">.</span>
-						Changement du liquide de refroidissement</p>
-					<p>
-						<span class="point">.</span>
-						Changement du liquide de  frein</p>
-					<p>
-						<span class="point">.</span>
-						Vidange boîte de vitesse ou pont</p>
-				</div>
-			</div>
-		</div>
-	</div>
+		{% endif %}
+	{% endfor %}
 </section>
